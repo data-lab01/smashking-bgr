@@ -1865,3 +1865,61 @@ body.rtl .whatsapp-float:hover .whatsapp-tooltip {
     left: 20px;
   }
 }
+/* ========== STORE STATUS BADGE ========== */
+.store-status-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.store-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.store-status i {
+  font-size: 14px;
+}
+
+.store-status.open {
+  background: #e8f5e9;
+  color: #2b9348;
+  border: 1px solid rgba(43, 147, 72, 0.3);
+}
+
+.store-status.closed {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid rgba(198, 40, 40, 0.3);
+}
+
+.store-status.closing-soon {
+  background: #fff8e1;
+  color: #f57c00;
+  border: 1px solid rgba(245, 124, 0, 0.3);
+}
+
+.store-status.loading {
+  background: #f5f0eb;
+  color: #8a7a6a;
+}
+
+@keyframes pulse-green {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .store-status {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+}
