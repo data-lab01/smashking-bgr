@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Smash King Burger – Handcrafted smashed burgers in Nürnberg. Fresh ingredients, fair prices.">
+  <title>Smash King Burger | Handcrafted Burgers Nürnberg</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">SMASH KING <span>BURGER</span></div>
+      
+      <div class="language-selector" id="langSelector">
+        <button data-lang="en" class="lang-btn active">🇬🇧 EN</button>
+        <button data-lang="de" class="lang-btn">🇩🇪 DE</button>
+        <button data-lang="ar" class="lang-btn">🇸🇦 عربي</button>
+      </div>
+
+      <nav class="navigation">
+        <div class="nav-links-wrapper">
+          <a href="#" data-page="home" class="nav-link active" data-i18n="nav_home">Home</a>
+          <a href="#" data-page="menu" class="nav-link" data-i18n="nav_menu">Menu</a>
+          <a href="#" data-page="builder" class="nav-link" data-i18n="nav_build">Build</a>
+          <a href="#" data-page="deals" class="nav-link" data-i18n="nav_deals">Deals</a>
+          <a href="#" data-page="locations" class="nav-link" data-i18n="nav_locations">Locations</a>
+          <a href="#" data-page="about" class="nav-link" data-i18n="nav_about">About</a>
+          <a href="#" data-page="offers" class="nav-link" data-i18n="nav_offers">Offers</a>
+          <a href="#" data-page="contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+        </div>
+        
+        <div class="nav-actions">
+          <button class="cart-trigger" id="cartTrigger">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge" id="cartCount">0</span>
+          </button>
+          <button class="order-trigger" id="orderTrigger" data-i18n="order_now">ORDER NOW</button>
+        </div>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME PAGE -->
+  <main id="homePage" class="page active">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge" data-i18n="hero_badge"> NÜRNBERG'S FAVORITE BURGER</span>
+        <h1><span data-i18n="hero_line1">Smash that craving</span><br><span data-i18n="hero_line2">with every bite</span></h1>
+        <p class="hero-description" data-i18n="hero_desc">Real beef. Smashed on the grill. Served hot. No frozen stuff. Just good food.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" id="viewMenuBtn" data-i18n="see_menu">SEE OUR MENU →</button>
+          <button class="btn-outline" id="deliveryBtn" data-i18n="delivery_btn">🚚 Delivery</button>
+        </div>
+      </div>
+    </section>
+    
+    <div class="trust-badges">
+      <div class="trust-item" data-i18n="trust_delivery"><i class="fas fa-truck-fast"></i> Free delivery over €25</div>
+      <div class="trust-item" data-i18n="trust_time"><i class="fas fa-clock"></i> Ready in 15-20 min</div>
+      <div class="trust-item" data-i18n="trust_fresh"><i class="fas fa-leaf"></i> 100% fresh ingredients</div>
+      <div class="trust-item" data-i18n="trust_rating"><i class="fas fa-star"></i> 4.9 ★ (2k+ reviews)</div>
+    </div>
+    
+    <section class="features">
+      <div class="feature"><i class="fas fa-fire"></i><h3 data-i18n="feature1_title">Smashed fresh</h3><p data-i18n="feature1_desc">We smash each patty right on the grill</p></div>
+      <div class="feature"><i class="fas fa-leaf"></i><h3 data-i18n="feature2_title">Local ingredients</h3><p data-i18n="feature2_desc">From farms around Nürnberg</p></div>
+      <div class="feature"><i class="fas fa-euro-sign"></i><h3 data-i18n="feature3_title">Fair prices</h3><p data-i18n="feature3_desc">Good burgers shouldn't cost a fortune</p></div>
+    </section>
+  </main>
+
+  <!-- MENU PAGE -->
+  <div id="menuPage" class="page">
+    <div class="page-container">
+      <div class="section-title">
+        <h2 data-i18n="menu_title">Our menu</h2>
+        <p data-i18n="menu_subtitle">What we're famous for</p>
+      </div>
+      <div id="menuGrid" class="menu-grid"></div>
+    </div>
+  </div>
+
+  <!-- BUILDER PAGE -->
+  <div id="builderPage" class="page">
+    <div class="page-container">
+      <div class="builder-panel">
+        <h2 data-i18n="builder_title">Make it your way</h2>
+        <p data-i18n="builder_subtitle">Pick your bun, choose your patty, add what you like.</p>
+        <div id="builderContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEALS PAGE -->
+  <div id="dealsPage" class="page">
+    <div class="page-container">
+      <div class="deals-panel">
+        <h2 data-i18n="deals_title">Save with combos</h2>
+        <div id="combosContainer" class="combos-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATIONS PAGE -->
+  <div id="locationsPage" class="page">
+    <div class="page-container">
+      <h2 class="section-title" data-i18n="locations_title">Find us</h2>
+      <div id="locationsGrid" class="locations-grid"></div>
+    </div>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="aboutPage" class="page">
+    <div class="page-container">
+      <div class="about-panel">
+        <div class="about-story">
+          <div class="story-badge" data-i18n="story_badge">OUR STORY</div>
+          <h2 data-i18n="about_title">From a dream<br>to your plate</h2>
+          <div class="about-quote">
+            <i class="fas fa-quote-left"></i>
+            <p data-i18n="about_quote">My name is Emer. I started Smash King in 2024 because I was tired of dry, sad burgers.</p>
+          </div>
+          <p data-i18n="about_text">We started small — just a tiny spot. Now we're here, still smashing every single patty by hand.</p>
+          <div class="about-stats">
+            <div class="stat"><span class="stat-number">2019</span><span data-i18n="stat_founded">Founded</span></div>
+            <div class="stat"><span class="stat-number">100%</span><span data-i18n="stat_hand">Hand-smashed</span></div>
+            <div class="stat"><span class="stat-number">10k+</span><span data-i18n="stat_customers">Happy customers</span></div>
+          </div>
+        </div>
+        <div class="about-gallery">
+          <div class="gallery-main"><div class="about-image"></div></div>
+          <div class="gallery-thumbs">
+            <div class="thumb active" data-img="burger1"></div>
+            <div class="thumb" data-img="kitchen"></div>
+            <div class="thumb" data-img="team"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFERS PAGE -->
+  <div id="offersPage" class="page">
+    <div class="page-container">
+      <h2 class="section-title" data-i18n="offers_title">This week's deals</h2>
+      <div id="offersGrid" class="offers-grid"></div>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div id="contactPage" class="page">
+    <div class="page-container">
+      <div class="contact-panel">
+        <h2 data-i18n="contact_title">Say hello</h2>
+        <div class="contact-wrapper">
+          <form class="contact-form">
+            <input type="text" id="contactNameInput" placeholder="Your name">
+            <input type="email" id="contactEmailInput" placeholder="Email address">
+            <textarea id="contactMsgInput" rows="4" placeholder="What's on your mind?"></textarea>
+            <button type="button" class="btn-primary" id="sendContactBtn" data-i18n="send_message">Send message</button>
+          </form>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Pirckheimerstraße 68, Nürnberg</p>
+            <p><i class="fas fa-phone"></i> +49 176 290 92498</p>
+            <p><i class="fas fa-envelope"></i> smashkingnuremberg@gmail.com</p>
+          </div>
+        </div>
+        <div id="contactSuccessMsg" class="contact-success">✓ Message sent! We'll reply within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div id="cartOverlay" class="cart-overlay"></div>
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header"><span data-i18n="your_bag">Your bag</span><button id="closeCartBtn" class="close-btn">×</button></div>
+    <div id="cartItemsList" class="cart-items-list"></div>
+    <div id="cartTotalAmount" class="cart-total">€0.00</div>
+    <button id="checkoutBtn" class="btn-primary full-width" data-i18n="checkout">Checkout →</button>
+  </div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">SMASH KING <span>BURGER</span></div>
+        <p data-i18n="footer_tagline">Handcrafted smashed burgers made with love in Nürnberg since 2019. Quality ingredients, fair prices, fast service.</p>
+        <div class="footer-social">
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-links-column">
+          <h4>Explore</h4>
+          <a href="#" data-page="home">Home</a>
+          <a href="#" data-page="menu">Menu</a>
+          <a href="#" data-page="builder">Build Your Burger</a>
+          <a href="#" data-page="deals">Deals & Offers</a>
+        </div>
+        <div class="footer-links-column">
+          <h4>Info</h4>
+          <a href="#" data-page="locations">Locations</a>
+          <a href="#" data-page="about">About Us</a>
+          <a href="#" data-page="offers">Weekly Offers</a>
+          <a href="#" data-page="contact">Contact</a>
+        </div>
+        <div class="footer-links-column">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Imprint</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+      
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Pirckheimerstraße 68, Nürnberg</p>
+        <p><i class="fas fa-phone"></i> +49 176 290 92498</p>
+        <p><i class="fas fa-envelope"></i> smashkingnuremberg@gmail.com</p>
+        <p><i class="fas fa-clock"></i> Tue-Fri: 11-22 | Sat-Sun: 16-22 | Mon: Closed</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p data-i18n="footer_copyright">© 2026 Smash King Burger | Made in Nürnberg</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Imprint</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
