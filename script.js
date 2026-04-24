@@ -696,5 +696,29 @@ function init() {
   
   // ========== COOKIE CONSENT ==========
   initCookieConsent();
+
+    // ========== WHATSAPP ORDER WITH CART SUMMARY ==========
+  const whatsappBtn = document.getElementById('whatsappOrderBtn');
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', () => {
+      let message = 'Hello! I would like to order from Smash King Burger:%0A%0A';
+      
+      if (cart.length > 0) {
+        message += '*MY ORDER:*%0A';
+        let total = 0;
+        cart.forEach(item => {
+          message += `- ${item.name} x${item.quantity} = €${(item.price * item.quantity).toFixed(2)}%0A`;
+          total += item.price * item.quantity;
+        });
+        message += `%0A*TOTAL: €${total.toFixed(2)}*%0A%0A`;
+        message += 'Please confirm my order and let me know the delivery time.';
+      } else {
+        message += 'I would like to see the menu and get recommendations.';
+      }
+      
+      const phoneNumber = '4917629092498';
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    });
+  }
 }
 init();
