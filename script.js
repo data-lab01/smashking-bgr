@@ -38,60 +38,32 @@ let cart = [];
 // ========== COMPLETE TRANSLATIONS ==========
 const translations = {
   en: {
-    // Navigation
     nav_home: "Home", nav_menu: "Menu", nav_build: "Build", nav_deals: "Deals",
     nav_locations: "Locations", nav_about: "About", nav_offers: "Offers", nav_contact: "Contact",
     order_now: "ORDER NOW",
-    
-    // Hero
     hero_badge: " NÜRNBERG'S FAVORITE BURGER",
     hero_line1: "Smash that craving", hero_line2: "with every bite",
     hero_desc: "Real beef. Smashed on the grill. Served hot. No frozen stuff. Just good food.",
     see_menu: "SEE OUR MENU", delivery_btn: "🚚 Delivery",
-    
-    // Trust badges
     trust_delivery: "Free delivery over €25", trust_time: "Ready in 15-20 min",
     trust_fresh: "100% fresh ingredients", trust_rating: "4.9 ★ (2k+ reviews)",
-    
-    // Features
     feature1_title: "Smashed fresh", feature1_desc: "We smash each patty right on the grill",
     feature2_title: "Local ingredients", feature2_desc: "From farms around Nürnberg",
     feature3_title: "Fair prices", feature3_desc: "Good burgers shouldn't cost a fortune",
-    
-    // Menu Page
     menu_title: "Our menu", menu_subtitle: "What we're famous for",
-    
-    // Builder Page
     builder_title: "Make it your way", builder_subtitle: "Pick your bun, choose your patty, add what you like.",
-    
-    // Deals Page
+    builder_bun: "Choose your bun", builder_patty: "Choose your patty",
     deals_title: "Save with combos",
-    
-    // Locations Page
     locations_title: "Find us",
-    
-    // About Page
     story_badge: "OUR STORY", about_title: "From a dream<br>to your plate",
     about_quote: "My name is Emer. I started Smash King in 2024 because I was tired of dry, sad burgers.",
     about_text: "We started small — just a tiny spot. Now we're here, still smashing every single patty by hand.",
     stat_founded: "Founded", stat_hand: "Hand-smashed", stat_customers: "Happy customers",
-    
-    // Offers Page
     offers_title: "This week's deals",
-    
-    // Contact Page
     contact_title: "Say hello", send_message: "Send message",
-    
-    // Cart
     your_bag: "Your bag", checkout: "Checkout",
-    
-    // Footer
     footer_tagline: "Handcrafted smashed burgers since 2019",
-    footer_home: "Home", footer_menu: "Menu", footer_build: "Build", footer_deals: "Deals",
-    footer_locations: "Locations", footer_about: "About", footer_contact: "Contact",
     footer_copyright: "© 2026 Smash King Burger | Made in Nürnberg",
-    
-    // Cart messages
     addToCart: "Add to bag", cartEmpty: "Your bag is empty", orderPlaced: "Order placed!"
   },
   de: {
@@ -109,6 +81,7 @@ const translations = {
     feature3_title: "Faire Preise", feature3_desc: "Gute Burger sollten kein Vermögen kosten",
     menu_title: "Unsere Speisekarte", menu_subtitle: "Dafür sind wir bekannt",
     builder_title: "Mach deinen Burger", builder_subtitle: "Wähle dein Brötchen, dein Patty und was du magst.",
+    builder_bun: "Wähle dein Brötchen", builder_patty: "Wähle dein Patty",
     deals_title: "Spare mit Combos", locations_title: "Finde uns",
     story_badge: "UNSERE GESCHICHTE", about_title: "Vom Traum<br>auf deinen Teller",
     about_quote: "Mein Name ist Emer. Ich habe Smash King 2024 gegründet, weil ich trockene Burger satt hatte.",
@@ -117,8 +90,6 @@ const translations = {
     offers_title: "Angebote der Woche", contact_title: "Kontakt", send_message: "Nachricht senden",
     your_bag: "Ihr Warenkorb", checkout: "Zur Kasse",
     footer_tagline: "Handgemachte Smash-Burger seit 2019",
-    footer_home: "Startseite", footer_menu: "Speisekarte", footer_build: "Bauen", footer_deals: "Angebote",
-    footer_locations: "Standorte", footer_about: "Über uns", footer_contact: "Kontakt",
     footer_copyright: "© 2026 Smash King Burger | Hergestellt in Nürnberg",
     addToCart: "In den Warenkorb", cartEmpty: "Ihr Warenkorb ist leer", orderPlaced: "Bestellung aufgegeben!"
   },
@@ -137,6 +108,7 @@ const translations = {
     feature3_title: "أسعار عادلة", feature3_desc: "البرجر الجيد لا يجب أن يكلف ثروة",
     menu_title: "قائمتنا", menu_subtitle: "ما نشتهر به",
     builder_title: "ابتكر برجرك", builder_subtitle: "اختر الخبز، اللحم، وأضف ما تحب",
+    builder_bun: "اختر الخبز", builder_patty: "اختر اللحم",
     deals_title: "وفر مع الباقات", locations_title: "أوجدنا",
     story_badge: "قصتنا", about_title: "من حلم<br>إلى طبقك",
     about_quote: "اسمي إمير. أسست سماش كينج في 2024 لأنني سئمت من البرجر الجاف.",
@@ -145,8 +117,6 @@ const translations = {
     offers_title: "عروض هذا الأسبوع", contact_title: "تواصل معنا", send_message: "إرسال الرسالة",
     your_bag: "سلتك", checkout: "إتمام الشراء",
     footer_tagline: "برجر سماش محضر يدوياً منذ 2019",
-    footer_home: "الرئيسية", footer_menu: "القائمة", footer_build: "ابتكار", footer_deals: "العروض",
-    footer_locations: "الفروع", footer_about: "معلومات عنا", footer_contact: "اتصل بنا",
     footer_copyright: "© 2026 سماش كينج برجر | صنع في نورنبرغ",
     addToCart: "أضف إلى السلة", cartEmpty: "سلتك فارغة", orderPlaced: "تم الطلب!"
   }
@@ -157,7 +127,6 @@ function applyTranslations() {
   const t = translations[currentLang];
   if (!t) return;
   
-  // Update all elements with data-i18n attribute
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (t[key]) {
@@ -169,7 +138,6 @@ function applyTranslations() {
     }
   });
   
-  // Update placeholders
   const nameInput = document.getElementById('contactNameInput');
   const emailInput = document.getElementById('contactEmailInput');
   const msgInput = document.getElementById('contactMsgInput');
@@ -177,14 +145,12 @@ function applyTranslations() {
   if (emailInput) emailInput.placeholder = currentLang === 'en' ? 'Email address' : (currentLang === 'de' ? 'E-Mail Adresse' : 'البريد الإلكتروني');
   if (msgInput) msgInput.placeholder = currentLang === 'en' ? 'What\'s on your mind?' : (currentLang === 'de' ? 'Was möchtest du uns sagen?' : 'ماذا تريد أن تقول؟');
   
-  // Update buttons text
   const sendBtn = document.querySelector('#sendContactBtn');
   if (sendBtn) sendBtn.textContent = t.send_message;
   
   const orderBtn = document.querySelector('#orderTrigger');
   if (orderBtn) orderBtn.textContent = t.order_now;
   
-  // Re-render dynamic content
   renderMenu();
   renderCombos();
   renderLocations();
@@ -215,6 +181,84 @@ function showNotification(msg) {
 function copyOfferCode(code) {
   navigator.clipboard.writeText(code);
   showNotification(`✓ Code "${code}" copied!`);
+}
+
+// ========== STORE STATUS FUNCTION ==========
+function updateStoreStatus() {
+  const statusContainer = document.getElementById('storeStatusContainer');
+  if (!statusContainer) return;
+  
+  const now = new Date();
+  const day = now.getDay();
+  const hour = now.getHours();
+  const minute = now.getMinutes();
+  const currentTime = hour + minute / 60;
+  
+  let isOpen = false;
+  let statusMessage = '';
+  let statusClass = '';
+  
+  // Monday closed
+  if (day === 1) {
+    isOpen = false;
+    statusMessage = '🍔 Closed on Mondays';
+    statusClass = 'closed';
+  }
+  // Tuesday - Friday: 11:00 - 22:00
+  else if (day >= 2 && day <= 5) {
+    if (currentTime >= 11 && currentTime < 22) {
+      isOpen = true;
+      const hoursLeft = Math.floor(22 - currentTime);
+      const minutesLeft = Math.round((22 - currentTime) * 60);
+      if (hoursLeft <= 1) {
+        statusMessage = `🟡 Open - Closing in ${minutesLeft} minutes`;
+        statusClass = 'closing-soon';
+      } else {
+        statusMessage = `🟢 Open now - Closes at 22:00`;
+        statusClass = 'open';
+      }
+    } else {
+      isOpen = false;
+      if (currentTime < 11) {
+        const hoursUntil = Math.floor(11 - currentTime);
+        statusMessage = `🔴 Closed - Opens today at 11:00 (in ${hoursUntil} hour${hoursUntil !== 1 ? 's' : ''})`;
+      } else {
+        statusMessage = '🔴 Closed - Opens tomorrow at 11:00';
+      }
+      statusClass = 'closed';
+    }
+  }
+  // Saturday - Sunday: 16:00 - 22:00
+  else if (day === 6 || day === 0) {
+    if (currentTime >= 16 && currentTime < 22) {
+      isOpen = true;
+      const hoursLeft = Math.floor(22 - currentTime);
+      const minutesLeft = Math.round((22 - currentTime) * 60);
+      if (hoursLeft <= 1) {
+        statusMessage = `🟡 Open - Closing in ${minutesLeft} minutes`;
+        statusClass = 'closing-soon';
+      } else {
+        statusMessage = `🟢 Open now - Closes at 22:00`;
+        statusClass = 'open';
+      }
+    } else {
+      isOpen = false;
+      if (currentTime < 16) {
+        const hoursUntil = Math.floor(16 - currentTime);
+        statusMessage = `🔴 Closed - Opens today at 16:00 (in ${hoursUntil} hour${hoursUntil !== 1 ? 's' : ''})`;
+      } else {
+        statusMessage = '🔴 Closed - Opens tomorrow at 16:00';
+      }
+      statusClass = 'closed';
+    }
+  }
+  
+  statusContainer.innerHTML = `<div class="store-status ${statusClass}"><i class="fas ${isOpen ? 'fa-store' : 'fa-clock'}"></i><span>${statusMessage}</span></div>`;
+}
+
+function initStoreStatus() {
+  updateStoreStatus();
+  setInterval(updateStoreStatus, 60000);
 }
 
 // ========== RENDER FUNCTIONS ==========
@@ -349,240 +393,100 @@ function showPage(pageId) {
 function openCart() { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').style.display = 'block'; }
 function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').style.display = 'none'; }
 
-// ========== INITIALIZATION ==========
-function init() {
-  const savedLang = localStorage.getItem('lang') || 'en';
-  setLanguage(savedLang);
-  loadCart();
-  
-  // Event Listeners
-  document.querySelectorAll('.nav-link, .footer-links a, .footer-nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const page = link.getAttribute('data-page');
-      if (page) showPage(page);
-    });
-  });
-  
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
-  });
-  
-  document.getElementById('viewMenuBtn')?.addEventListener('click', () => showPage('menu'));
-  document.getElementById('orderTrigger')?.addEventListener('click', openCart);
-  document.getElementById('cartTrigger')?.addEventListener('click', openCart);
-  document.getElementById('closeCartBtn')?.addEventListener('click', closeCart);
-  document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
-  
-  document.getElementById('checkoutBtn')?.addEventListener('click', () => {
-    if (cart.length) {
-      showNotification(translations[currentLang].orderPlaced);
-      cart = [];
-      updateCartUI();
-      saveCart();
-      closeCart();
-    }
-  });
-  
-  document.getElementById('sendContactBtn')?.addEventListener('click', () => {
-    const name = document.getElementById('contactNameInput')?.value;
-    if (name) {
-      showNotification(`✓ Thanks ${name}! Message sent.`);
-      document.getElementById('contactNameInput').value = '';
-      document.getElementById('contactEmailInput').value = '';
-      document.getElementById('contactMsgInput').value = '';
-      const successDiv = document.getElementById('contactSuccessMsg');
-      if (successDiv) {
-        successDiv.classList.add('show');
-        setTimeout(() => successDiv.classList.remove('show'), 5000);
-      }
-    } else {
-      showNotification('Please fill in all fields');
-    }
-  });
-  
-  // ========== MOBILE MENU ==========
-  const mobileToggle = document.getElementById('mobileMenuToggle');
-  const navLinksWrapper = document.querySelector('.nav-links-wrapper');
-  const navLinks = document.querySelectorAll('.nav-link');
-  
-  if (mobileToggle && navLinksWrapper) {
-    // Toggle menu when clicking the hamburger icon
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      mobileToggle.classList.toggle('active');
-      navLinksWrapper.classList.toggle('open');
-    });
-    
-    // Close menu when clicking on any navigation link
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileToggle.classList.remove('active');
-        navLinksWrapper.classList.remove('open');
-      });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (navLinksWrapper.classList.contains('open') && 
-          !navLinksWrapper.contains(e.target) && 
-          !mobileToggle.contains(e.target)) {
-        mobileToggle.classList.remove('active');
-        navLinksWrapper.classList.remove('open');
-      }
-    });
-    
-    // Also close menu when window is resized back to desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 1024 && navLinksWrapper.classList.contains('open')) {
-        mobileToggle.classList.remove('active');
-        navLinksWrapper.classList.remove('open');
-      }
-    });
-  }
-  
-  // Gallery
-  const thumbs = document.querySelectorAll('.thumb');
-  const mainImage = document.querySelector('.about-image');
-  if (thumbs.length && mainImage) {
-    const images = { burger1: 'img/9.png', kitchen: 'img/kitchen.jpg', team: 'img/team.jpg' };
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        const imgKey = thumb.getAttribute('data-img');
-        if (images[imgKey]) {
-          mainImage.style.opacity = '0.5';
-          setTimeout(() => { mainImage.style.backgroundImage = `url('${images[imgKey]}')`; mainImage.style.opacity = '1'; }, 200);
-        }
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-      });
-    });
-  }
-  
-  // Builder
-  const builderContainer = document.getElementById('builderContainer');
-  if (builderContainer) {
-    builderContainer.innerHTML = `
-      <div class="builder-options">
-        <div class="builder-field"><label>${translations[currentLang].builder_bun || 'Choose your bun'}</label><select><option>Brioche</option><option>Whole wheat</option><option>Gluten free</option></select></div>
-        <div class="builder-field"><label>${translations[currentLang].builder_patty || 'Choose your patty'}</label><select><option>Angus beef</option><option>Chicken</option><option>Vegan</option></select></div>
-        <div class="builder-field"><button id="addCustomBtn" class="btn-primary" style="margin-top:28px;">${translations[currentLang].addToCart || 'Add to bag'}</button></div>
-      </div>
-    `;
-    document.getElementById('addCustomBtn')?.addEventListener('click', () => addToCart({ id: Date.now(), name: "Custom Burger", price: 11.99, quantity: 1 }));
-  }
-}
-
 // ========== COOKIE CONSENT FUNCTIONS ==========
 function initCookieConsent() {
-  // Check if user already made a choice
   const cookieChoice = localStorage.getItem('cookieConsent');
   
   if (!cookieChoice) {
-    // Show cookie banner after 1 second
     setTimeout(() => {
-      document.getElementById('cookieConsent').classList.add('show');
+      const banner = document.getElementById('cookieConsent');
+      if (banner) banner.classList.add('show');
     }, 1000);
   }
   
-  // Accept All
-  const acceptBtn = document.getElementById('acceptCookies');
-  const acceptAllModal = document.getElementById('acceptAllModal');
-  
   const acceptCookies = () => {
     localStorage.setItem('cookieConsent', 'accepted');
-    localStorage.setItem('cookiePreferences', JSON.stringify({
-      necessary: true,
-      functional: true,
-      analytics: true,
-      marketing: true
-    }));
-    document.getElementById('cookieConsent').classList.remove('show');
+    localStorage.setItem('cookiePreferences', JSON.stringify({ necessary: true, functional: true, analytics: true, marketing: true }));
+    const banner = document.getElementById('cookieConsent');
+    if (banner) banner.classList.remove('show');
     showNotification('✅ Cookie preferences saved!');
   };
   
+  const acceptBtn = document.getElementById('acceptCookies');
+  const acceptAllModal = document.getElementById('acceptAllModal');
   if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
   if (acceptAllModal) acceptAllModal.addEventListener('click', acceptCookies);
   
-  // Decline
   const declineBtn = document.getElementById('declineCookies');
   if (declineBtn) {
     declineBtn.addEventListener('click', () => {
       localStorage.setItem('cookieConsent', 'declined');
-      localStorage.setItem('cookiePreferences', JSON.stringify({
-        necessary: true,
-        functional: false,
-        analytics: false,
-        marketing: false
-      }));
-      document.getElementById('cookieConsent').classList.remove('show');
+      localStorage.setItem('cookiePreferences', JSON.stringify({ necessary: true, functional: false, analytics: false, marketing: false }));
+      const banner = document.getElementById('cookieConsent');
+      if (banner) banner.classList.remove('show');
       showNotification('❌ Only necessary cookies are active.');
     });
   }
   
-  // Customize - Open Modal
   const customizeBtn = document.getElementById('customizeCookies');
   const modal = document.getElementById('cookieModal');
   const closeModal = document.getElementById('closeModal');
   
-  if (customizeBtn) {
+  if (customizeBtn && modal) {
     customizeBtn.addEventListener('click', () => {
-      // Load saved preferences
       const savedPrefs = localStorage.getItem('cookiePreferences');
       if (savedPrefs) {
         const prefs = JSON.parse(savedPrefs);
-        document.getElementById('functionalCookies').checked = prefs.functional || false;
-        document.getElementById('analyticsCookies').checked = prefs.analytics || false;
-        document.getElementById('marketingCookies').checked = prefs.marketing || false;
-      } else {
-        document.getElementById('functionalCookies').checked = true;
-        document.getElementById('analyticsCookies').checked = true;
-        document.getElementById('marketingCookies').checked = true;
+        const funcCheck = document.getElementById('functionalCookies');
+        const analyticsCheck = document.getElementById('analyticsCookies');
+        const marketingCheck = document.getElementById('marketingCookies');
+        if (funcCheck) funcCheck.checked = prefs.functional || false;
+        if (analyticsCheck) analyticsCheck.checked = prefs.analytics || false;
+        if (marketingCheck) marketingCheck.checked = prefs.marketing || false;
       }
       modal.classList.add('show');
     });
   }
   
-  // Close modal
   if (closeModal) {
     closeModal.addEventListener('click', () => {
-      modal.classList.remove('show');
+      if (modal) modal.classList.remove('show');
     });
   }
   
-  // Save Preferences
   const savePrefs = document.getElementById('savePreferences');
   if (savePrefs) {
     savePrefs.addEventListener('click', () => {
       const preferences = {
         necessary: true,
-        functional: document.getElementById('functionalCookies').checked,
-        analytics: document.getElementById('analyticsCookies').checked,
-        marketing: document.getElementById('marketingCookies').checked
+        functional: document.getElementById('functionalCookies')?.checked || false,
+        analytics: document.getElementById('analyticsCookies')?.checked || false,
+        marketing: document.getElementById('marketingCookies')?.checked || false
       };
       localStorage.setItem('cookieConsent', 'customized');
       localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
-      document.getElementById('cookieConsent').classList.remove('show');
-      modal.classList.remove('show');
+      const banner = document.getElementById('cookieConsent');
+      if (banner) banner.classList.remove('show');
+      if (modal) modal.classList.remove('show');
       showNotification('✅ Your cookie preferences have been saved!');
     });
   }
   
-  // Close modal when clicking outside
   window.addEventListener('click', (e) => {
-    if (e.target === modal) {
+    if (e.target === modal && modal) {
       modal.classList.remove('show');
     }
   });
 }
 
+// ========== SINGLE INIT FUNCTION (ALL FEATURES) ==========
 function init() {
   const savedLang = localStorage.getItem('lang') || 'en';
   setLanguage(savedLang);
   loadCart();
   
-  // Event Listeners
-  document.querySelectorAll('.nav-link, .footer-links a, .footer-nav-link').forEach(link => {
+  // Navigation
+  document.querySelectorAll('.nav-link, .footer-links a, .footer-nav-link, .footer-links-column a').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const page = link.getAttribute('data-page');
@@ -590,44 +494,64 @@ function init() {
     });
   });
   
+  // Language buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
   });
   
-  document.getElementById('viewMenuBtn')?.addEventListener('click', () => showPage('menu'));
-  document.getElementById('orderTrigger')?.addEventListener('click', openCart);
-  document.getElementById('cartTrigger')?.addEventListener('click', openCart);
-  document.getElementById('closeCartBtn')?.addEventListener('click', closeCart);
-  document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
+  // Hero buttons
+  const viewMenuBtn = document.getElementById('viewMenuBtn');
+  if (viewMenuBtn) viewMenuBtn.addEventListener('click', () => showPage('menu'));
   
-  document.getElementById('checkoutBtn')?.addEventListener('click', () => {
-    if (cart.length) {
-      showNotification(translations[currentLang].orderPlaced);
-      cart = [];
-      updateCartUI();
-      saveCart();
-      closeCart();
-    }
-  });
+  // Cart
+  const orderTrigger = document.getElementById('orderTrigger');
+  const cartTrigger = document.getElementById('cartTrigger');
+  const closeCartBtn = document.getElementById('closeCartBtn');
+  const cartOverlay = document.getElementById('cartOverlay');
+  if (orderTrigger) orderTrigger.addEventListener('click', openCart);
+  if (cartTrigger) cartTrigger.addEventListener('click', openCart);
+  if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+  if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
   
-  document.getElementById('sendContactBtn')?.addEventListener('click', () => {
-    const name = document.getElementById('contactNameInput')?.value;
-    if (name) {
-      showNotification(`✓ Thanks ${name}! Message sent.`);
-      document.getElementById('contactNameInput').value = '';
-      document.getElementById('contactEmailInput').value = '';
-      document.getElementById('contactMsgInput').value = '';
-      const successDiv = document.getElementById('contactSuccessMsg');
-      if (successDiv) {
-        successDiv.classList.add('show');
-        setTimeout(() => successDiv.classList.remove('show'), 5000);
+  // Checkout
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length) {
+        showNotification(translations[currentLang].orderPlaced);
+        cart = [];
+        updateCartUI();
+        saveCart();
+        closeCart();
       }
-    } else {
-      showNotification('Please fill in all fields');
-    }
-  });
+    });
+  }
   
-  // ========== MOBILE MENU ==========
+  // Contact form
+  const sendContactBtn = document.getElementById('sendContactBtn');
+  if (sendContactBtn) {
+    sendContactBtn.addEventListener('click', () => {
+      const name = document.getElementById('contactNameInput')?.value;
+      if (name) {
+        showNotification(`✓ Thanks ${name}! Message sent.`);
+        const nameInput = document.getElementById('contactNameInput');
+        const emailInput = document.getElementById('contactEmailInput');
+        const msgInput = document.getElementById('contactMsgInput');
+        if (nameInput) nameInput.value = '';
+        if (emailInput) emailInput.value = '';
+        if (msgInput) msgInput.value = '';
+        const successDiv = document.getElementById('contactSuccessMsg');
+        if (successDiv) {
+          successDiv.classList.add('show');
+          setTimeout(() => successDiv.classList.remove('show'), 5000);
+        }
+      } else {
+        showNotification('Please fill in all fields');
+      }
+    });
+  }
+  
+  // Mobile menu
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const navLinksWrapper = document.querySelector('.nav-links-wrapper');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -691,34 +615,14 @@ function init() {
         <div class="builder-field"><button id="addCustomBtn" class="btn-primary" style="margin-top:28px;">${translations[currentLang].addToCart || 'Add to bag'}</button></div>
       </div>
     `;
-    document.getElementById('addCustomBtn')?.addEventListener('click', () => addToCart({ id: Date.now(), name: "Custom Burger", price: 11.99, quantity: 1 }));
+    const addCustomBtn = document.getElementById('addCustomBtn');
+    if (addCustomBtn) addCustomBtn.addEventListener('click', () => addToCart({ id: Date.now(), name: "Custom Burger", price: 11.99, quantity: 1 }));
   }
   
-  // ========== COOKIE CONSENT ==========
+  // Initialize features
   initCookieConsent();
-
-    // ========== WHATSAPP ORDER WITH CART SUMMARY ==========
-  const whatsappBtn = document.getElementById('whatsappOrderBtn');
-  if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', () => {
-      let message = 'Hello! I would like to order from Smash King Burger:%0A%0A';
-      
-      if (cart.length > 0) {
-        message += '*MY ORDER:*%0A';
-        let total = 0;
-        cart.forEach(item => {
-          message += `- ${item.name} x${item.quantity} = €${(item.price * item.quantity).toFixed(2)}%0A`;
-          total += item.price * item.quantity;
-        });
-        message += `%0A*TOTAL: €${total.toFixed(2)}*%0A%0A`;
-        message += 'Please confirm my order and let me know the delivery time.';
-      } else {
-        message += 'I would like to see the menu and get recommendations.';
-      }
-      
-      const phoneNumber = '4917629092498';
-      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-    });
-  }
+  initStoreStatus();
 }
+
+// Start everything
 init();
