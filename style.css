@@ -1,6 +1,6 @@
-/* ============================================
+/* 
    SMASH KING BURGER - FULL WIDTH VERSION
-   ============================================ */
+    */
 
 * {
   margin: 0;
@@ -34,7 +34,7 @@ body.rtl {
   overflow-x: hidden;
 }
 
-/* ========== HEADER - FULL WIDTH ========== */
+/*  HEADER - FULL WIDTH  */
 .header {
   background: #ffffff;
   border-bottom: 1px solid #f0e6df;
@@ -200,7 +200,7 @@ body.rtl {
   transition: all 0.3s;
 }
 
-/* ========== HERO - FULL WIDTH ========== */
+/*  HERO - FULL WIDTH  */
 .hero {
   position: relative;
   min-height: 85vh;
@@ -274,7 +274,7 @@ body.rtl {
   flex-wrap: wrap;
 }
 
-/* ========== BUTTONS ========== */
+/*  BUTTONS  */
 .btn-primary {
   background: #ff6b2c;
   border: none;
@@ -313,7 +313,7 @@ body.rtl {
   width: 100%;
 }
 
-/* ========== TRUST BADGES ========== */
+/*  TRUST BADGES  */
 .trust-badges {
   display: flex;
   justify-content: center;
@@ -343,7 +343,7 @@ body.rtl {
   color: #ff6b2c;
 }
 
-/* ========== FEATURES ========== */
+/*  FEATURES  */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -387,7 +387,7 @@ body.rtl {
   font-size: 14px;
 }
 
-/* ========== PAGES & CONTAINERS ========== */
+/*  PAGES & CONTAINERS  */
 .page-container {
   max-width: 1400px;
   width: 90%;
@@ -425,7 +425,7 @@ body.rtl {
   color: #8a7a6a;
 }
 
-/* ========== MENU GRID ========== */
+/*  MENU GRID  */
 .menu-grid,
 .combos-grid,
 .locations-grid,
@@ -499,7 +499,7 @@ body.rtl {
   color: #ffffff;
 }
 
-/* ========== BUILDER PAGE ========== */
+/*  BUILDER PAGE  */
 .builder-panel,
 .deals-panel,
 .about-panel,
@@ -538,7 +538,7 @@ body.rtl {
   color: #1e1a17;
 }
 
-/* ========== ABOUT PAGE ========== */
+/*  ABOUT PAGE  */
 .about-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -656,7 +656,7 @@ body.rtl {
 .thumb[data-img="kitchen"] { background-image: url('img/kitchen.jpg'); }
 .thumb[data-img="team"] { background-image: url('img/team.jpg'); }
 
-/* ========== LOCATIONS PAGE ========== */
+/*  LOCATIONS PAGE  */
 .location-card {
   position: relative;
 }
@@ -786,7 +786,7 @@ body.rtl {
   border-color: #ff6b2c;
 }
 
-/* ========== OFFERS PAGE ========== */
+/*  OFFERS PAGE  */
 .offer-card {
   text-align: center;
   position: relative;
@@ -876,7 +876,7 @@ body.rtl {
   color: #ffffff;
 }
 
-/* ========== CONTACT PAGE ========== */
+/*  CONTACT PAGE  */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -926,7 +926,7 @@ body.rtl {
   display: block;
 }
 
-/* ========== CART SIDEBAR ========== */
+/*  CART SIDEBAR  */
 .cart-overlay {
   position: fixed;
   top: 0;
@@ -999,7 +999,7 @@ body.rtl {
   color: #ff6b2c;
 }
 
-/* ========== FOOTER - PROFESSIONAL FULL WIDTH ========== */
+/*  FOOTER - PROFESSIONAL FULL WIDTH  */
 .footer {
   background: #1e1a17;
   padding: 60px 32px 0;
@@ -1245,7 +1245,7 @@ main {
   }
 }
 
-/* ========== RESPONSIVE - FULL WIDTH ON ALL DEVICES ========== */
+/*  RESPONSIVE - FULL WIDTH ON ALL DEVICES  */
 @media (max-width: 1024px) {
   .header-container {
     width: 95%;
