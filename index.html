@@ -254,6 +254,68 @@
 </footer>
 </div>
 
+  <!-- Cookie Consent Banner -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <i class="fas fa-cookie-bite"></i>
+        <div>
+          <strong>🍪 We use cookies!</strong>
+          <p>We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept", you consent to our use of cookies.</p>
+        </div>
+      </div>
+      <div class="cookie-buttons">
+        <button id="acceptCookies" class="cookie-btn accept">Accept All</button>
+        <button id="declineCookies" class="cookie-btn decline">Decline</button>
+        <button id="customizeCookies" class="cookie-btn customize">Customize</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Settings Modal (hidden by default) -->
+  <div id="cookieModal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <div class="cookie-modal-header">
+        <h3>Cookie Settings</h3>
+        <button id="closeModal" class="close-modal">&times;</button>
+      </div>
+      <div class="cookie-modal-body">
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" id="necessaryCookies" checked disabled>
+            <strong>Necessary Cookies</strong>
+            <p>Required for the website to function properly. Cannot be disabled.</p>
+          </label>
+        </div>
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" id="functionalCookies">
+            <strong>Functional Cookies</strong>
+            <p>Remember your preferences like language and cart items.</p>
+          </label>
+        </div>
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" id="analyticsCookies">
+            <strong>Analytics Cookies</strong>
+            <p>Help us understand how visitors interact with our website.</p>
+          </label>
+        </div>
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" id="marketingCookies">
+            <strong>Marketing Cookies</strong>
+            <p>Used to deliver relevant advertisements.</p>
+          </label>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button id="savePreferences" class="cookie-btn accept">Save Preferences</button>
+        <button id="acceptAllModal" class="cookie-btn accept">Accept All</button>
+      </div>
+    </div>
+  </div>
+
 <script src="script.js"></script>
 </body>
 </html>
