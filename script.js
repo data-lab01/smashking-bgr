@@ -1,4 +1,4 @@
-// ========== MENU DATA ==========
+// MENU DATA 
 const menuItems = [
   { id: 1, name: "MENÜ SMOKEY KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 16.50, img: "img/4.png" },
   { id: 2, name: "MENÜ TRUFFLE KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 15.50, img: "img/2.png" },
@@ -10,32 +10,32 @@ const menuItems = [
   { id: 8, name: "ONION RINGS", desc: "Crispy onion rings", price: 4.50, img: "img/5.png" }
 ];
 
-// ========== LOCATIONS DATA ==========
+//  LOCATIONS DATA
 const locations = [
   { id: 1, name: "Maxfeld", address: "Pirckheimerstraße 68, Nürnberg", hours: "11:00 - 23:00", phone: "+49 176 290 92498", email: "info@smashking.de", features: ["Dine-in", "Takeaway", "Delivery"], isMain: true },
   { id: 2, name: "Nürnberg Süd", address: "Gostenhofer Hauptstraße 12, Nürnberg", hours: "Opening Summer 2026", phone: "-", email: "sud@smashking.de", features: ["Coming Soon"], isComingSoon: true },
   { id: 3, name: "Nürnberg West", address: "Fürther Straße 45, Nürnberg", hours: "Opening Summer 2026", phone: "-", email: "west@smashking.de", features: ["Coming Soon"], isComingSoon: true }
 ];
 
-// ========== OFFERS DATA ==========
+// OFFERS DATA
 const offers = [
   { title: "First order? 20% off", desc: "Use code: SMASH20", icon: "fa-gift", discount: "20%", badge: "NEW" },
   { title: "Tuesday = BOGO", desc: "Buy 1, Get 1 Free", icon: "fa-hand-peace", discount: "BOGO", badge: "HOT" },
   { title: "Free fries on Fridays", desc: "With any burger", icon: "fa-french-fries", discount: "FREE", badge: "WEEKLY" }
 ];
 
-// ========== COMBOS DATA ==========
+// COMBOS DATA 
 const combos = [
   { name: "Smash + Fries + Drink", price: 12.90 },
   { name: "Family pack (4 burgers)", price: 29.99 },
   { name: "Late night special", price: 9.90 }
 ];
 
-// ========== GLOBAL VARIABLES ==========
+// GLOBAL VARIABLES 
 let currentLang = 'en';
 let cart = [];
 
-// ========== COMPLETE TRANSLATIONS ==========
+//  COMPLETE TRANSLATIONS 
 const translations = {
   en: {
     // Navigation
@@ -152,7 +152,7 @@ const translations = {
   }
 };
 
-// ========== APPLY TRANSLATIONS FUNCTION ==========
+//  APPLY TRANSLATIONS FUNCTION 
 function applyTranslations() {
   const t = translations[currentLang];
   if (!t) return;
@@ -192,7 +192,7 @@ function applyTranslations() {
   updateCartUI();
 }
 
-// ========== LANGUAGE FUNCTIONS ==========
+//  LANGUAGE FUNCTIONS 
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
@@ -203,7 +203,7 @@ function setLanguage(lang) {
   applyTranslations();
 }
 
-// ========== HELPER FUNCTIONS ==========
+//  HELPER FUNCTIONS 
 function showNotification(msg) {
   const div = document.createElement('div');
   div.textContent = msg;
@@ -217,7 +217,7 @@ function copyOfferCode(code) {
   showNotification(`✓ Code "${code}" copied!`);
 }
 
-// ========== RENDER FUNCTIONS ==========
+//  RENDER FUNCTIONS 
 function renderMenu() {
   const grid = document.getElementById('menuGrid');
   if (!grid) return;
@@ -295,7 +295,7 @@ function renderOffers() {
   `).join('');
 }
 
-// ========== CART FUNCTIONS ==========
+//  CART FUNCTIONS 
 function addToCart(item) {
   const existing = cart.find(i => i.id === item.id);
   if (existing) existing.quantity++;
@@ -337,7 +337,7 @@ function updateCartUI() {
 function saveCart() { localStorage.setItem('smashCart', JSON.stringify(cart)); }
 function loadCart() { const saved = localStorage.getItem('smashCart'); if (saved) { cart = JSON.parse(saved); updateCartUI(); } }
 
-// ========== PAGE NAVIGATION ==========
+//  PAGE NAVIGATION 
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(pageId + 'Page').classList.add('active');
@@ -349,7 +349,7 @@ function showPage(pageId) {
 function openCart() { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').style.display = 'block'; }
 function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').style.display = 'none'; }
 
-// ========== INITIALIZATION ==========
+//  INITIALIZATION 
 function init() {
   const savedLang = localStorage.getItem('lang') || 'en';
   setLanguage(savedLang);
@@ -401,7 +401,7 @@ function init() {
     }
   });
   
-  // ========== MOBILE MENU ==========
+  //  MOBILE MENU 
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const navLinksWrapper = document.querySelector('.nav-links-wrapper');
   const navLinks = document.querySelectorAll('.nav-link');
