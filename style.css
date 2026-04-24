@@ -1451,3 +1451,53 @@ body.rtl .cart-sidebar.open {
     max-width: 1600px;
   }
 }
+
+/* Mobile Menu Styles */
+@media (max-width: 1024px) {
+  .nav-links-wrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 24px 24px;
+    gap: 12px;
+    transition: left 0.3s ease;
+    z-index: 999;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-links-wrapper.open {
+    left: 0;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+    z-index: 1000;
+    position: relative;
+  }
+  
+  .nav-link {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
+  .nav-actions {
+    margin-left: auto;
+  }
+}
+
+/* RTL Support for mobile menu */
+body.rtl .nav-links-wrapper {
+  left: auto;
+  right: -100%;
+}
+
+body.rtl .nav-links-wrapper.open {
+  left: auto;
+  right: 0;
+}
