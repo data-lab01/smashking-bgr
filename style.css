@@ -1747,3 +1747,121 @@ body.rtl .nav-links-wrapper.open {
     font-size: 12px;
   }
 }
+
+/* ========== FLOATING WHATSAPP BUTTON ========== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  animation: whatsapp-pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background: #20b859;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Tooltip on hover */
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #1e1a17;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #1e1a17;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 75px;
+}
+
+/* Pulse animation */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+  
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+/* RTL Support for Arabic */
+body.rtl .whatsapp-float {
+  right: auto;
+  left: 30px;
+}
+
+body.rtl .whatsapp-tooltip {
+  right: auto;
+  left: 70px;
+}
+
+body.rtl .whatsapp-tooltip::after {
+  right: auto;
+  left: -8px;
+  border-color: transparent #1e1a17 transparent transparent;
+}
+
+body.rtl .whatsapp-float:hover .whatsapp-tooltip {
+  right: auto;
+  left: 75px;
+}
+
+@media (max-width: 768px) {
+  body.rtl .whatsapp-float {
+    right: auto;
+    left: 20px;
+  }
+}
