@@ -62,7 +62,7 @@ const translations = {
     offers_title: "This week's deals",
     contact_title: "Say hello", send_message: "Send message",
     your_bag: "Your bag", checkout: "Checkout",
-    footer_tagline: "Handcrafted smashed burgers since 2019",
+    footer_tagline: "Handcrafted smashed burgers since 2024",
     footer_copyright: "© 2026 Smash King Burger | Made in Nürnberg",
     addToCart: "Add to bag", cartEmpty: "Your bag is empty", orderPlaced: "Order placed!"
   },
@@ -89,7 +89,7 @@ const translations = {
     stat_founded: "Gegründet", stat_hand: "Handgesmasht", stat_customers: "Glückliche Kunden",
     offers_title: "Angebote der Woche", contact_title: "Kontakt", send_message: "Nachricht senden",
     your_bag: "Ihr Warenkorb", checkout: "Zur Kasse",
-    footer_tagline: "Handgemachte Smash-Burger seit 2019",
+    footer_tagline: "Handgemachte Smash-Burger seit 2024",
     footer_copyright: "© 2026 Smash King Burger | Hergestellt in Nürnberg",
     addToCart: "In den Warenkorb", cartEmpty: "Ihr Warenkorb ist leer", orderPlaced: "Bestellung aufgegeben!"
   },
@@ -116,7 +116,7 @@ const translations = {
     stat_founded: "تأسست", stat_hand: "ضغط يدوي", stat_customers: "عملاء سعداء",
     offers_title: "عروض هذا الأسبوع", contact_title: "تواصل معنا", send_message: "إرسال الرسالة",
     your_bag: "سلتك", checkout: "إتمام الشراء",
-    footer_tagline: "برجر سماش محضر يدوياً منذ 2019",
+    footer_tagline: "برجر سماش محضر يدوياً منذ 2024",
     footer_copyright: "© 2026 سماش كينج برجر | صنع في نورنبرغ",
     addToCart: "أضف إلى السلة", cartEmpty: "سلتك فارغة", orderPlaced: "تم الطلب!"
   }
