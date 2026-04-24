@@ -1,4 +1,4 @@
-// MENU DATA 
+// ========== MENU DATA ==========
 const menuItems = [
   { id: 1, name: "MENÜ SMOKEY KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 16.50, img: "img/4.png" },
   { id: 2, name: "MENÜ TRUFFLE KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 15.50, img: "img/2.png" },
@@ -10,32 +10,32 @@ const menuItems = [
   { id: 8, name: "ONION RINGS", desc: "Crispy onion rings", price: 4.50, img: "img/5.png" }
 ];
 
-//  LOCATIONS DATA
+// ========== LOCATIONS DATA ==========
 const locations = [
   { id: 1, name: "Maxfeld", address: "Pirckheimerstraße 68, Nürnberg", hours: "11:00 - 23:00", phone: "+49 176 290 92498", email: "info@smashking.de", features: ["Dine-in", "Takeaway", "Delivery"], isMain: true },
   { id: 2, name: "Nürnberg Süd", address: "Gostenhofer Hauptstraße 12, Nürnberg", hours: "Opening Summer 2026", phone: "-", email: "sud@smashking.de", features: ["Coming Soon"], isComingSoon: true },
   { id: 3, name: "Nürnberg West", address: "Fürther Straße 45, Nürnberg", hours: "Opening Summer 2026", phone: "-", email: "west@smashking.de", features: ["Coming Soon"], isComingSoon: true }
 ];
 
-// OFFERS DATA
+// ========== OFFERS DATA ==========
 const offers = [
   { title: "First order? 20% off", desc: "Use code: SMASH20", icon: "fa-gift", discount: "20%", badge: "NEW" },
   { title: "Tuesday = BOGO", desc: "Buy 1, Get 1 Free", icon: "fa-hand-peace", discount: "BOGO", badge: "HOT" },
   { title: "Free fries on Fridays", desc: "With any burger", icon: "fa-french-fries", discount: "FREE", badge: "WEEKLY" }
 ];
 
-// COMBOS DATA 
+// ========== COMBOS DATA ==========
 const combos = [
   { name: "Smash + Fries + Drink", price: 12.90 },
   { name: "Family pack (4 burgers)", price: 29.99 },
   { name: "Late night special", price: 9.90 }
 ];
 
-// GLOBAL VARIABLES 
+// ========== GLOBAL VARIABLES ==========
 let currentLang = 'en';
 let cart = [];
 
-//  COMPLETE TRANSLATIONS 
+// ========== COMPLETE TRANSLATIONS ==========
 const translations = {
   en: {
     // Navigation
@@ -152,7 +152,7 @@ const translations = {
   }
 };
 
-//  APPLY TRANSLATIONS FUNCTION 
+// ========== APPLY TRANSLATIONS FUNCTION ==========
 function applyTranslations() {
   const t = translations[currentLang];
   if (!t) return;
@@ -192,7 +192,7 @@ function applyTranslations() {
   updateCartUI();
 }
 
-//  LANGUAGE FUNCTIONS 
+// ========== LANGUAGE FUNCTIONS ==========
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
@@ -203,7 +203,7 @@ function setLanguage(lang) {
   applyTranslations();
 }
 
-//  HELPER FUNCTIONS 
+// ========== HELPER FUNCTIONS ==========
 function showNotification(msg) {
   const div = document.createElement('div');
   div.textContent = msg;
@@ -217,7 +217,7 @@ function copyOfferCode(code) {
   showNotification(`✓ Code "${code}" copied!`);
 }
 
-//  RENDER FUNCTIONS 
+// ========== RENDER FUNCTIONS ==========
 function renderMenu() {
   const grid = document.getElementById('menuGrid');
   if (!grid) return;
@@ -295,7 +295,7 @@ function renderOffers() {
   `).join('');
 }
 
-//  CART FUNCTIONS 
+// ========== CART FUNCTIONS ==========
 function addToCart(item) {
   const existing = cart.find(i => i.id === item.id);
   if (existing) existing.quantity++;
@@ -337,7 +337,7 @@ function updateCartUI() {
 function saveCart() { localStorage.setItem('smashCart', JSON.stringify(cart)); }
 function loadCart() { const saved = localStorage.getItem('smashCart'); if (saved) { cart = JSON.parse(saved); updateCartUI(); } }
 
-//  PAGE NAVIGATION 
+// ========== PAGE NAVIGATION ==========
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(pageId + 'Page').classList.add('active');
@@ -349,7 +349,7 @@ function showPage(pageId) {
 function openCart() { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').style.display = 'block'; }
 function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').style.display = 'none'; }
 
-//  INITIALIZATION 
+// ========== INITIALIZATION ==========
 function init() {
   const savedLang = localStorage.getItem('lang') || 'en';
   setLanguage(savedLang);
@@ -401,7 +401,7 @@ function init() {
     }
   });
   
-  //  MOBILE MENU 
+  // ========== MOBILE MENU ==========
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const navLinksWrapper = document.querySelector('.nav-links-wrapper');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -473,4 +473,228 @@ function init() {
   }
 }
 
+// ========== COOKIE CONSENT FUNCTIONS ==========
+function initCookieConsent() {
+  // Check if user already made a choice
+  const cookieChoice = localStorage.getItem('cookieConsent');
+  
+  if (!cookieChoice) {
+    // Show cookie banner after 1 second
+    setTimeout(() => {
+      document.getElementById('cookieConsent').classList.add('show');
+    }, 1000);
+  }
+  
+  // Accept All
+  const acceptBtn = document.getElementById('acceptCookies');
+  const acceptAllModal = document.getElementById('acceptAllModal');
+  
+  const acceptCookies = () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    localStorage.setItem('cookiePreferences', JSON.stringify({
+      necessary: true,
+      functional: true,
+      analytics: true,
+      marketing: true
+    }));
+    document.getElementById('cookieConsent').classList.remove('show');
+    showNotification('✅ Cookie preferences saved!');
+  };
+  
+  if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
+  if (acceptAllModal) acceptAllModal.addEventListener('click', acceptCookies);
+  
+  // Decline
+  const declineBtn = document.getElementById('declineCookies');
+  if (declineBtn) {
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'declined');
+      localStorage.setItem('cookiePreferences', JSON.stringify({
+        necessary: true,
+        functional: false,
+        analytics: false,
+        marketing: false
+      }));
+      document.getElementById('cookieConsent').classList.remove('show');
+      showNotification('❌ Only necessary cookies are active.');
+    });
+  }
+  
+  // Customize - Open Modal
+  const customizeBtn = document.getElementById('customizeCookies');
+  const modal = document.getElementById('cookieModal');
+  const closeModal = document.getElementById('closeModal');
+  
+  if (customizeBtn) {
+    customizeBtn.addEventListener('click', () => {
+      // Load saved preferences
+      const savedPrefs = localStorage.getItem('cookiePreferences');
+      if (savedPrefs) {
+        const prefs = JSON.parse(savedPrefs);
+        document.getElementById('functionalCookies').checked = prefs.functional || false;
+        document.getElementById('analyticsCookies').checked = prefs.analytics || false;
+        document.getElementById('marketingCookies').checked = prefs.marketing || false;
+      } else {
+        document.getElementById('functionalCookies').checked = true;
+        document.getElementById('analyticsCookies').checked = true;
+        document.getElementById('marketingCookies').checked = true;
+      }
+      modal.classList.add('show');
+    });
+  }
+  
+  // Close modal
+  if (closeModal) {
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('show');
+    });
+  }
+  
+  // Save Preferences
+  const savePrefs = document.getElementById('savePreferences');
+  if (savePrefs) {
+    savePrefs.addEventListener('click', () => {
+      const preferences = {
+        necessary: true,
+        functional: document.getElementById('functionalCookies').checked,
+        analytics: document.getElementById('analyticsCookies').checked,
+        marketing: document.getElementById('marketingCookies').checked
+      };
+      localStorage.setItem('cookieConsent', 'customized');
+      localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+      document.getElementById('cookieConsent').classList.remove('show');
+      modal.classList.remove('show');
+      showNotification('✅ Your cookie preferences have been saved!');
+    });
+  }
+  
+  // Close modal when clicking outside
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+    }
+  });
+}
+
+function init() {
+  const savedLang = localStorage.getItem('lang') || 'en';
+  setLanguage(savedLang);
+  loadCart();
+  
+  // Event Listeners
+  document.querySelectorAll('.nav-link, .footer-links a, .footer-nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const page = link.getAttribute('data-page');
+      if (page) showPage(page);
+    });
+  });
+  
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+  });
+  
+  document.getElementById('viewMenuBtn')?.addEventListener('click', () => showPage('menu'));
+  document.getElementById('orderTrigger')?.addEventListener('click', openCart);
+  document.getElementById('cartTrigger')?.addEventListener('click', openCart);
+  document.getElementById('closeCartBtn')?.addEventListener('click', closeCart);
+  document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
+  
+  document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+    if (cart.length) {
+      showNotification(translations[currentLang].orderPlaced);
+      cart = [];
+      updateCartUI();
+      saveCart();
+      closeCart();
+    }
+  });
+  
+  document.getElementById('sendContactBtn')?.addEventListener('click', () => {
+    const name = document.getElementById('contactNameInput')?.value;
+    if (name) {
+      showNotification(`✓ Thanks ${name}! Message sent.`);
+      document.getElementById('contactNameInput').value = '';
+      document.getElementById('contactEmailInput').value = '';
+      document.getElementById('contactMsgInput').value = '';
+      const successDiv = document.getElementById('contactSuccessMsg');
+      if (successDiv) {
+        successDiv.classList.add('show');
+        setTimeout(() => successDiv.classList.remove('show'), 5000);
+      }
+    } else {
+      showNotification('Please fill in all fields');
+    }
+  });
+  
+  // ========== MOBILE MENU ==========
+  const mobileToggle = document.getElementById('mobileMenuToggle');
+  const navLinksWrapper = document.querySelector('.nav-links-wrapper');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  if (mobileToggle && navLinksWrapper) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileToggle.classList.toggle('active');
+      navLinksWrapper.classList.toggle('open');
+    });
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        navLinksWrapper.classList.remove('open');
+      });
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (navLinksWrapper.classList.contains('open') && 
+          !navLinksWrapper.contains(e.target) && 
+          !mobileToggle.contains(e.target)) {
+        mobileToggle.classList.remove('active');
+        navLinksWrapper.classList.remove('open');
+      }
+    });
+    
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024 && navLinksWrapper.classList.contains('open')) {
+        mobileToggle.classList.remove('active');
+        navLinksWrapper.classList.remove('open');
+      }
+    });
+  }
+  
+  // Gallery
+  const thumbs = document.querySelectorAll('.thumb');
+  const mainImage = document.querySelector('.about-image');
+  if (thumbs.length && mainImage) {
+    const images = { burger1: 'img/9.png', kitchen: 'img/kitchen.jpg', team: 'img/team.jpg' };
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const imgKey = thumb.getAttribute('data-img');
+        if (images[imgKey]) {
+          mainImage.style.opacity = '0.5';
+          setTimeout(() => { mainImage.style.backgroundImage = `url('${images[imgKey]}')`; mainImage.style.opacity = '1'; }, 200);
+        }
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  }
+  
+  // Builder
+  const builderContainer = document.getElementById('builderContainer');
+  if (builderContainer) {
+    builderContainer.innerHTML = `
+      <div class="builder-options">
+        <div class="builder-field"><label>${translations[currentLang].builder_bun || 'Choose your bun'}</label><select><option>Brioche</option><option>Whole wheat</option><option>Gluten free</option></select></div>
+        <div class="builder-field"><label>${translations[currentLang].builder_patty || 'Choose your patty'}</label><select><option>Angus beef</option><option>Chicken</option><option>Vegan</option></select></div>
+        <div class="builder-field"><button id="addCustomBtn" class="btn-primary" style="margin-top:28px;">${translations[currentLang].addToCart || 'Add to bag'}</button></div>
+      </div>
+    `;
+    document.getElementById('addCustomBtn')?.addEventListener('click', () => addToCart({ id: Date.now(), name: "Custom Burger", price: 11.99, quantity: 1 }));
+  }
+  
+  // ========== COOKIE CONSENT ==========
+  initCookieConsent();
+}
 init();
