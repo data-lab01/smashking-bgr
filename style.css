@@ -1992,3 +1992,46 @@ body.rtl .whatsapp-float:hover .whatsapp-tooltip {
     font-size: 12px;
   }
 }
+
+/*  MENU CARD -- LIGHTER BLACK */
+.menu-card {
+  background: #2a2420;  /* Lighter black / dark gray */
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 107, 44, 0.2);
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  border-color: #ff6b2c;
+  box-shadow: 0 12px 24px rgba(255, 107, 44, 0.15);
+}
+
+/* Also update other card types to match */
+.combo-card,
+.location-card,
+.offer-card,
+.feature {
+  background: #2a2420;  /* Same lighter black for consistency */
+}
+
+/* Adjust text colors for better contrast on lighter black */
+.menu-title,
+.combo-card h3,
+.location-name,
+.offer-title {
+  color: #ffffff;
+}
+
+.menu-desc,
+.combo-card p,
+.location-address,
+.offer-desc {
+  color: #c0b8b0;
+}
+
+.menu-price {
+  color: #ffb347;
+}
