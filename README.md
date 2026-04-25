@@ -1,3 +1,4 @@
+<meta name="robots" content="noindex, nofollow">
 # 🍔 SmashKing Burger - Website
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
