@@ -322,8 +322,8 @@ function getCategoryBadge(category) {
   const badges = {
     burgers: ' BURGER',
     sides: ' SIDE',
-    drinks: ' DRINK',
-    Extras: ' DESSERT'
+    drinks: ' DRINKS',
+    Extras: ' EXTRAS'
   };
   return badges[category] || '';
 }
