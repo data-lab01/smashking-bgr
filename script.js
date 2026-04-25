@@ -1,47 +1,63 @@
-// ========== MENU DATA ==========
+//  MENU DATA WITH CATEGORIES 
 const menuItems = [
-  { id: 1, name: "MENÜ SMOKEY KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 16.50, img: "img/4.png" },
-  { id: 2, name: "MENÜ TRUFFLE KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 15.50, img: "img/2.png" },
-  { id: 3, name: "MENÜ EPIC KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 14.50, img: "img/8.png" },
-  { id: 4, name: "MENÜ GOLDEN KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 13.50, img: "img/3.png" },
-  { id: 5, name: "MENÜ CHICKEN KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE, NUGGETS", price: 14.50, img: "img/9.png" },
-  { id: 6, name: "MAJESTIC FRIES", desc: "POMMES", price: 5.00, img: "img/7.png" },
-  { id: 7, name: "CHICKEN NUGGETS", desc: "6 pieces with sauce", price: 6.00, img: "img/11.png" },
-  { id: 8, name: "ONION RINGS", desc: "Crispy onion rings", price: 4.50, img: "img/5.png" }
+  // Burgers Category (id: 1-5)
+  { id: 1, name: "MENÜ SMOKEY KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE NUGGETS", price: 16.50, img: "img/4.png", category: "burgers" },
+  { id: 2, name: "MENÜ TRUFFLE KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE NUGGETS", price: 15.50, img: "img/2.png", category: "burgers" },
+  { id: 3, name: "MENÜ EPIC KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE NUGGETS", price: 14.50, img: "img/8.png", category: "burgers" },
+  { id: 4, name: "MENÜ GOLDEN KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE NUGGETS", price: 13.50, img: "img/3.png", category: "burgers" },
+  { id: 5, name: "MENÜ CHICKEN KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE NUGGETS", price: 14.50, img: "img/9.png", category: "burgers" },
+  
+  // Sides Category (id: 6-8)
+  { id: 6, name: "MAJESTIC FRIES", desc: "Crispy golden fries", price: 5.00, img: "img/7.png", category: "sides" },
+  { id: 7, name: "CHICKEN NUGGETS", desc: "6 pieces with sauce", price: 6.00, img: "img/11.png", category: "sides" },
+  { id: 8, name: "ONION RINGS", desc: "Crispy onion rings", price: 4.50, img: "img/5.png", category: "sides" },
+  { id: 9, name: "ONION RINGS", desc: "Crispy onion rings", price: 5.00, img: "img/kartofel.png", category: "sides" },
+  
+  // Drinks Category (id: 10-12)
+  { id: 10, name: "SPRITE", desc: "Refreshing lemon-lime soda", price: 3.50, img: "img/sprite.png", category: "drinks" },
+  { id: 11, name: "COCA COLA", desc: "Classic cola", price: 3.50, img: "img/cola.png", category: "drinks" },
+  { id: 12, name: "FANTA", desc: "Orange soda", price: 3.50, img: "img/fanta.png", category: "drinks" },
+  { id: 13, name: "LIPTON", desc: "Orange soda", price: 3.50, img: "img/lipton.png", category: "drinks" },
+  
+  // Desserts Category (id: 13-15)
+  { id: 13, name: "MILKSHAKE", desc: "Vanilla, chocolate or strawberry", price: 5.50, img: "img/7.png", category: "desserts" },
+  { id: 14, name: "BROWNIE", desc: "Warm chocolate brownie", price: 4.50, img: "img/11.png", category: "desserts" },
+  { id: 15, name: "ICE CREAM", desc: "Vanilla soft serve", price: 3.00, img: "img/5.png", category: "desserts" }
 ];
 
-// ========== LOCATIONS DATA ==========
+//  LOCATIONS DATA 
 const locations = [
   { id: 1, name: "Maxfeld", address: "Pirckheimerstraße 68, Nürnberg", hours: "11:00 - 23:00", phone: "+49 176 290 92498", email: "info@smashking.de", features: ["Dine-in", "Takeaway", "Delivery"], isMain: true },
   { id: 2, name: "Nürnberg Süd", address: "Gostenhofer Hauptstraße 12, Nürnberg", hours: "Opening Summer 2026", phone: "-", email: "sud@smashking.de", features: ["Coming Soon"], isComingSoon: true },
   { id: 3, name: "Nürnberg West", address: "Fürther Straße 45, Nürnberg", hours: "Opening Summer 2026", phone: "-", email: "west@smashking.de", features: ["Coming Soon"], isComingSoon: true }
 ];
 
-// ========== OFFERS DATA ==========
+//  OFFERS DATA 
 const offers = [
   { title: "First order? 20% off", desc: "Use code: SMASH20", icon: "fa-gift", discount: "20%", badge: "NEW" },
   { title: "Tuesday = BOGO", desc: "Buy 1, Get 1 Free", icon: "fa-hand-peace", discount: "BOGO", badge: "HOT" },
   { title: "Free fries on Fridays", desc: "With any burger", icon: "fa-french-fries", discount: "FREE", badge: "WEEKLY" }
 ];
 
-// ========== COMBOS DATA ==========
+//  COMBOS DATA 
 const combos = [
   { name: "Smash + Fries + Drink", price: 12.90 },
   { name: "Family pack (4 burgers)", price: 29.99 },
   { name: "Late night special", price: 9.90 }
 ];
 
-// ========== GLOBAL VARIABLES ==========
+//  GLOBAL VARIABLES 
 let currentLang = 'en';
 let cart = [];
+let activeCategory = 'all';
 
-// ========== COMPLETE TRANSLATIONS ==========
+//  COMPLETE TRANSLATIONS 
 const translations = {
   en: {
     nav_home: "Home", nav_menu: "Menu", nav_build: "Build", nav_deals: "Deals",
     nav_locations: "Locations", nav_about: "About", nav_offers: "Offers", nav_contact: "Contact",
     order_now: "ORDER NOW",
-    hero_badge: " NÜRNBERG'S FAVORITE BURGER",
+    hero_badge: "NÜRNBERG'S FAVORITE BURGER",
     hero_line1: "Smash that craving", hero_line2: "with every bite",
     hero_desc: "Real beef. Smashed on the grill. Served hot. No frozen stuff. Just good food.",
     see_menu: "SEE OUR MENU", delivery_btn: "🚚 Delivery",
@@ -51,6 +67,7 @@ const translations = {
     feature2_title: "Local ingredients", feature2_desc: "From farms around Nürnberg",
     feature3_title: "Fair prices", feature3_desc: "Good burgers shouldn't cost a fortune",
     menu_title: "Our menu", menu_subtitle: "What we're famous for",
+    filter_all: "All", filter_burgers: " Burgers", filter_sides: " Sides", filter_drinks: " Drinks", filter_desserts: " Desserts",
     builder_title: "Make it your way", builder_subtitle: "Pick your bun, choose your patty, add what you like.",
     builder_bun: "Choose your bun", builder_patty: "Choose your patty",
     deals_title: "Save with combos",
@@ -70,7 +87,7 @@ const translations = {
     nav_home: "Startseite", nav_menu: "Speisekarte", nav_build: "Bauen", nav_deals: "Angebote",
     nav_locations: "Standorte", nav_about: "Über uns", nav_offers: "Aktionen", nav_contact: "Kontakt",
     order_now: "JETZT BESTELLEN",
-    hero_badge: " NÜRNBERGS LIEBLINGSBURGER",
+    hero_badge: "NÜRNBERGS LIEBLINGSBURGER",
     hero_line1: "Zerquetsche den Hunger", hero_line2: "mit jedem Biss",
     hero_desc: "Rindfleisch. Frisch gegrillt. Heiß serviert. Kein Tiefkühlzeug.",
     see_menu: "ZUR SPEISEKARTE", delivery_btn: "🚚 Lieferung",
@@ -80,6 +97,7 @@ const translations = {
     feature2_title: "Lokale Zutaten", feature2_desc: "Von Bauernhöfen aus Nürnberg",
     feature3_title: "Faire Preise", feature3_desc: "Gute Burger sollten kein Vermögen kosten",
     menu_title: "Unsere Speisekarte", menu_subtitle: "Dafür sind wir bekannt",
+    filter_all: "Alle", filter_burgers: " Burger", filter_sides: " Beilagen", filter_drinks: " Getränke", filter_desserts: " Nachspeisen",
     builder_title: "Mach deinen Burger", builder_subtitle: "Wähle dein Brötchen, dein Patty und was du magst.",
     builder_bun: "Wähle dein Brötchen", builder_patty: "Wähle dein Patty",
     deals_title: "Spare mit Combos", locations_title: "Finde uns",
@@ -97,7 +115,7 @@ const translations = {
     nav_home: "الرئيسية", nav_menu: "القائمة", nav_build: "ابتكار", nav_deals: "العروض",
     nav_locations: "الفروع", nav_about: "معلومات عنا", nav_offers: "العروض", nav_contact: "اتصل بنا",
     order_now: "اطلب الآن",
-    hero_badge: " برجر نورنبرغ المفضل",
+    hero_badge: "برجر نورنبرغ المفضل",
     hero_line1: "اسحق رغبتك", hero_line2: "مع كل قضمة",
     hero_desc: "لحم بقري طازج. يُشوى على الفحم. يُقدم ساخناً.",
     see_menu: "استكشف القائمة", delivery_btn: "🚚 توصيل",
@@ -107,6 +125,7 @@ const translations = {
     feature2_title: "مكونات محلية", feature2_desc: "من مزارع نورنبرغ",
     feature3_title: "أسعار عادلة", feature3_desc: "البرجر الجيد لا يجب أن يكلف ثروة",
     menu_title: "قائمتنا", menu_subtitle: "ما نشتهر به",
+    filter_all: "الكل", filter_burgers: " برجر", filter_sides: " أطباق جانبية", filter_drinks: " مشروبات", filter_desserts: "حلويات",
     builder_title: "ابتكر برجرك", builder_subtitle: "اختر الخبز، اللحم، وأضف ما تحب",
     builder_bun: "اختر الخبز", builder_patty: "اختر اللحم",
     deals_title: "وفر مع الباقات", locations_title: "أوجدنا",
@@ -122,7 +141,7 @@ const translations = {
   }
 };
 
-// ========== APPLY TRANSLATIONS FUNCTION ==========
+//  APPLY TRANSLATIONS FUNCTION 
 function applyTranslations() {
   const t = translations[currentLang];
   if (!t) return;
@@ -137,6 +156,28 @@ function applyTranslations() {
       }
     }
   });
+  
+  // Update category filter button texts
+  const filterButtons = document.querySelectorAll('.category-btn');
+  if (filterButtons.length) {
+    const categories = ['all', 'burgers', 'sides', 'drinks', 'desserts'];
+    categories.forEach((cat, index) => {
+      if (filterButtons[index]) {
+        const key = `filter_${cat}`;
+        if (t[key]) {
+          // Preserve the emoji if present
+          const currentText = filterButtons[index].textContent;
+          const hasEmoji = currentText.includes('') || currentText.includes('') || currentText.includes('') || currentText.includes(' ');
+          if (hasEmoji && cat !== 'all') {
+            const emoji = cat === 'burgers' ? ' ' : cat === 'sides' ? ' ' : cat === 'drinks' ? ' ' : ' ';
+            filterButtons[index].textContent = emoji + t[key];
+          } else {
+            filterButtons[index].textContent = t[key];
+          }
+        }
+      }
+    });
+  }
   
   const nameInput = document.getElementById('contactNameInput');
   const emailInput = document.getElementById('contactEmailInput');
@@ -158,7 +199,7 @@ function applyTranslations() {
   updateCartUI();
 }
 
-// ========== LANGUAGE FUNCTIONS ==========
+//  LANGUAGE FUNCTIONS 
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
@@ -169,7 +210,7 @@ function setLanguage(lang) {
   applyTranslations();
 }
 
-// ========== HELPER FUNCTIONS ==========
+//  HELPER FUNCTIONS 
 function showNotification(msg) {
   const div = document.createElement('div');
   div.textContent = msg;
@@ -183,7 +224,7 @@ function copyOfferCode(code) {
   showNotification(`✓ Code "${code}" copied!`);
 }
 
-// ========== STORE STATUS FUNCTION ==========
+//  STORE STATUS FUNCTION 
 function updateStoreStatus() {
   const statusContainer = document.getElementById('storeStatusContainer');
   if (!statusContainer) return;
@@ -198,13 +239,11 @@ function updateStoreStatus() {
   let statusMessage = '';
   let statusClass = '';
   
-  // Monday closed
   if (day === 1) {
     isOpen = false;
-    statusMessage = '🍔 Closed on Mondays';
+    statusMessage = ' Closed on Mondays';
     statusClass = 'closed';
   }
-  // Tuesday - Friday: 11:00 - 22:00
   else if (day >= 2 && day <= 5) {
     if (currentTime >= 11 && currentTime < 22) {
       isOpen = true;
@@ -228,7 +267,6 @@ function updateStoreStatus() {
       statusClass = 'closed';
     }
   }
-  // Saturday - Sunday: 16:00 - 22:00
   else if (day === 6 || day === 0) {
     if (currentTime >= 16 && currentTime < 22) {
       isOpen = true;
@@ -261,14 +299,50 @@ function initStoreStatus() {
   setInterval(updateStoreStatus, 60000);
 }
 
-// ========== RENDER FUNCTIONS ==========
+//  CATEGORY FILTER FUNCTIONS 
+function initCategoryFilters() {
+  const buttons = document.querySelectorAll('.category-btn');
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      activeCategory = this.getAttribute('data-category');
+      renderMenu();
+    });
+  });
+}
+
+function getCategoryBadge(category) {
+  const badges = {
+    burgers: ' BURGER',
+    sides: ' SIDE',
+    drinks: ' DRINK',
+    desserts: ' DESSERT'
+  };
+  return badges[category] || '';
+}
+
+//  RENDER FUNCTIONS 
 function renderMenu() {
   const grid = document.getElementById('menuGrid');
   if (!grid) return;
   const t = translations[currentLang];
-  grid.innerHTML = menuItems.map(item => `
+  
+  let filteredItems = menuItems;
+  if (activeCategory !== 'all') {
+    filteredItems = menuItems.filter(item => item.category === activeCategory);
+  }
+  
+  if (filteredItems.length === 0) {
+    grid.innerHTML = `<div class="no-items-message">No items in this category</div>`;
+    return;
+  }
+  
+  grid.innerHTML = filteredItems.map(item => `
     <div class="menu-card">
       <div class="menu-image" style="background-image: url('${item.img}')"></div>
+      <div class="menu-category-badge">${getCategoryBadge(item.category)}</div>
       <h3 class="menu-title">${item.name}</h3>
       <div class="menu-price">€${item.price.toFixed(2)}</div>
       <p class="menu-desc">${item.desc}</p>
@@ -339,7 +413,7 @@ function renderOffers() {
   `).join('');
 }
 
-// ========== CART FUNCTIONS ==========
+//  CART FUNCTIONS 
 function addToCart(item) {
   const existing = cart.find(i => i.id === item.id);
   if (existing) existing.quantity++;
@@ -381,7 +455,7 @@ function updateCartUI() {
 function saveCart() { localStorage.setItem('smashCart', JSON.stringify(cart)); }
 function loadCart() { const saved = localStorage.getItem('smashCart'); if (saved) { cart = JSON.parse(saved); updateCartUI(); } }
 
-// ========== PAGE NAVIGATION ==========
+//  PAGE NAVIGATION 
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(pageId + 'Page').classList.add('active');
@@ -393,7 +467,7 @@ function showPage(pageId) {
 function openCart() { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').style.display = 'block'; }
 function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').style.display = 'none'; }
 
-// ========== COOKIE CONSENT FUNCTIONS ==========
+//  COOKIE CONSENT FUNCTIONS 
 function initCookieConsent() {
   const cookieChoice = localStorage.getItem('cookieConsent');
   
@@ -479,7 +553,7 @@ function initCookieConsent() {
   });
 }
 
-// ========== SINGLE INIT FUNCTION (ALL FEATURES) ==========
+//  SINGLE INIT FUNCTION (ALL FEATURES) 
 function init() {
   const savedLang = localStorage.getItem('lang') || 'en';
   setLanguage(savedLang);
@@ -620,6 +694,7 @@ function init() {
   }
   
   // Initialize features
+  initCategoryFilters();
   initCookieConsent();
   initStoreStatus();
 }
