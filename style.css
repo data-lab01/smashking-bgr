@@ -2362,3 +2362,9 @@ body.rtl .about-quote {
 body.rtl .about-quote:hover {
   transform: translateX(-6px);
 }
+
+.stat-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+  display: block;
+}
