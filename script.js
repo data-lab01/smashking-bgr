@@ -670,7 +670,7 @@ function init() {
   const thumbs = document.querySelectorAll('.thumb');
   const mainImage = document.querySelector('.about-image');
   if (thumbs.length && mainImage) {
-    const images = { burger1: 'img/9.png', kitchen: 'img/kitchen.jpg', team: 'img/team.jpg' };
+    const images = { burger1: 'img/9.png', kitchen: 'img/kartofel.png', team: 'img/team.jpg' };
     thumbs.forEach(thumb => {
       thumb.addEventListener('click', () => {
         const imgKey = thumb.getAttribute('data-img');
