@@ -7,24 +7,27 @@ const menuItems = [
   { id: 4, name: "MENÜ GOLDEN KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE NUGGETS", price: 13.50, img: "img/3.png", category: "burgers" },
   { id: 5, name: "MENÜ CHICKEN KING", desc: "BURGER + FRIES, ONION RINGS, CHILI CHEESE NUGGETS", price: 14.50, img: "img/9.png", category: "burgers" },
   
-  // Sides Category (id: 6-8)
+  // Sides Category (id: 6-10)
   { id: 6, name: "MAJESTIC FRIES", desc: "Crispy golden fries", price: 5.00, img: "img/7.png", category: "sides" },
   { id: 7, name: "CHICKEN NUGGETS", desc: "6 pieces with sauce", price: 6.00, img: "img/11.png", category: "sides" },
   { id: 8, name: "ONION RINGS", desc: "Crispy onion rings", price: 4.50, img: "img/5.png", category: "sides" },
-  { id: 9, name: "ONION RINGS", desc: "Crispy onion rings", price: 5.00, img: "img/kartofel.png", category: "sides" },
+  { id: 9, name: "SWEET POTATO FRIES", desc: "Crispy sweet potato fries", price: 6.00, img: "img/kartofel.png", category: "sides" },
+  { id: 10, name: "CHILLE CHEESE NUGGETS", desc: "Crispy cheese nuggets", price: 5.00, img: "img/6.png", category: "sides" },
   
-  // Drinks Category (id: 10-12)
-  { id: 10, name: "SPRITE", desc: "Refreshing lemon-lime soda", price: 3.50, img: "img/sprite.png", category: "drinks" },
-  { id: 11, name: "COCA COLA", desc: "Classic cola", price: 3.50, img: "img/cola.png", category: "drinks" },
-  { id: 12, name: "FANTA", desc: "Orange soda", price: 3.50, img: "img/fanta.png", category: "drinks" },
-  { id: 13, name: "LIPTON", desc: "Orange soda", price: 3.50, img: "img/lipton.png", category: "drinks" },
+  // Drinks Category (id: 11-16)
+  { id: 11, name: "SPRITE", desc: "Refreshing lemon-lime soda", price: 3.50, img: "img/sprite.png", category: "drinks" },
+  { id: 12, name: "COCA COLA", desc: "Classic cola", price: 3.50, img: "img/cola.png", category: "drinks" },
+  { id: 13, name: "FANTA", desc: "Orange soda", price: 3.50, img: "img/fanta.png", category: "drinks" },
+  { id: 14, name: "LIPTON", desc: "Orange soda", price: 3.50, img: "img/lipton.png", category: "drinks" },
+  { id: 15, name: "COCA COLA ZERO", desc: "Cola Zero", price: 3.50, img: "img/cola_zero.png", category: "drinks" },
+  { id: 16, name: "MEZZO MIX", desc: "Mezzo Mix", price: 3.50, img: "img/mezzo.png", category: "drinks" },
   
-  // Desserts Category (id: 13-15)
-  { id: 13, name: "Beef Patty", desc: "Extra beef patty", price: 3.00, img: "img/patty.png", category: "desserts" },
-  { id: 14, name: "Extra Cheddar", desc: "Extra cheddar cheese", price: 1.50, img: "img/cheddar.png", category: "desserts" },
-  { id: 15, name: "Chicken Bacon", desc: "Extra chicken bacon", price: 2.50, img: "img/bacon.png", category: "desserts" },
-  { id: 16, name: "Jalapeno", desc: "Extra jalapeno peppers", price: 1.50, img: "img/jalapenos.png", category: "desserts" },
-  { id: 17, name: "Caramelized Onions", desc: "Extra caramelized onions", price: 2.00, img: "img/onions.png", category: "desserts" }
+  // Extras Category (id: 17-21)
+  { id: 17, name: "Beef Patty", desc: "Extra beef patty", price: 3.00, img: "img/patty.png", category: "Extras" },
+  { id: 18, name: "Extra Cheddar", desc: "Extra cheddar cheese", price: 1.50, img: "img/cheddar.png", category: "Extras" },
+  { id: 19, name: "Chicken Bacon", desc: "Extra chicken bacon", price: 2.50, img: "img/bacon.png", category: "Extras" },
+  { id: 20, name: "Jalapeno", desc: "Extra jalapeno peppers", price: 1.50, img: "img/jalapenos.png", category: "Extras" },
+  { id: 21, name: "Caramelized Onions", desc: "Extra caramelized onions", price: 2.00, img: "img/onions.png", category: "Extras" }
 ];
 
 //  LOCATIONS DATA 
@@ -69,7 +72,7 @@ const translations = {
     feature2_title: "Local ingredients", feature2_desc: "From farms around Nürnberg",
     feature3_title: "Fair prices", feature3_desc: "Good burgers shouldn't cost a fortune",
     menu_title: "Our menu", menu_subtitle: "What we're famous for",
-    filter_all: "All", filter_burgers: " Burgers", filter_sides: " Sides", filter_drinks: " Drinks", filter_desserts: " Desserts",
+    filter_all: "All", filter_burgers: " Burgers", filter_sides: " Sides", filter_drinks: " Drinks", filter_Extras: " Extras",
     builder_title: "Make it your way", builder_subtitle: "Pick your bun, choose your patty, add what you like.",
     builder_bun: "Choose your bun", builder_patty: "Choose your patty",
     deals_title: "Save with combos",
@@ -99,7 +102,7 @@ const translations = {
     feature2_title: "Lokale Zutaten", feature2_desc: "Von Bauernhöfen aus Nürnberg",
     feature3_title: "Faire Preise", feature3_desc: "Gute Burger sollten kein Vermögen kosten",
     menu_title: "Unsere Speisekarte", menu_subtitle: "Dafür sind wir bekannt",
-    filter_all: "Alle", filter_burgers: " Burger", filter_sides: " Beilagen", filter_drinks: " Getränke", filter_desserts: " Nachspeisen",
+    filter_all: "Alle", filter_burgers: " Burger", filter_sides: " Beilagen", filter_drinks: " Getränke", filter_Extras: " Nachspeisen",
     builder_title: "Mach deinen Burger", builder_subtitle: "Wähle dein Brötchen, dein Patty und was du magst.",
     builder_bun: "Wähle dein Brötchen", builder_patty: "Wähle dein Patty",
     deals_title: "Spare mit Combos", locations_title: "Finde uns",
@@ -127,7 +130,7 @@ const translations = {
     feature2_title: "مكونات محلية", feature2_desc: "من مزارع نورنبرغ",
     feature3_title: "أسعار عادلة", feature3_desc: "البرجر الجيد لا يجب أن يكلف ثروة",
     menu_title: "قائمتنا", menu_subtitle: "ما نشتهر به",
-    filter_all: "الكل", filter_burgers: " برجر", filter_sides: " أطباق جانبية", filter_drinks: " مشروبات", filter_desserts: "حلويات",
+    filter_all: "الكل", filter_burgers: " برجر", filter_sides: " أطباق جانبية", filter_drinks: " مشروبات", filter_Extras: "حلويات",
     builder_title: "ابتكر برجرك", builder_subtitle: "اختر الخبز، اللحم، وأضف ما تحب",
     builder_bun: "اختر الخبز", builder_patty: "اختر اللحم",
     deals_title: "وفر مع الباقات", locations_title: "أوجدنا",
@@ -162,7 +165,7 @@ function applyTranslations() {
   // Update category filter button texts
   const filterButtons = document.querySelectorAll('.category-btn');
   if (filterButtons.length) {
-    const categories = ['all', 'burgers', 'sides', 'drinks', 'desserts'];
+    const categories = ['all', 'burgers', 'sides', 'drinks', 'Extras'];
     categories.forEach((cat, index) => {
       if (filterButtons[index]) {
         const key = `filter_${cat}`;
@@ -320,7 +323,7 @@ function getCategoryBadge(category) {
     burgers: ' BURGER',
     sides: ' SIDE',
     drinks: ' DRINK',
-    desserts: ' DESSERT'
+    Extras: ' DESSERT'
   };
   return badges[category] || '';
 }
