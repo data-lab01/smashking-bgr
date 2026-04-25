@@ -2077,3 +2077,288 @@ body.rtl .whatsapp-float:hover .whatsapp-tooltip {
   color: #6a5a4a;  /* Medium dark text for light background */
   font-size: 14px;
 }
+
+/*  ABOUT PAGE - PROFESSIONAL ENHANCED  */
+
+/* Main About Panel */
+.about-panel {
+  background: linear-gradient(135deg, #ffffff 0%, #fefaf5 100%);
+  border-radius: 48px;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid #f0e6df;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Story Section - Left Side */
+.about-story {
+  padding: 56px 48px;
+  background: #ffffff;
+}
+
+/* Story Badge */
+.story-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(255, 107, 44, 0.12), rgba(255, 179, 71, 0.08));
+  padding: 8px 20px;
+  border-radius: 60px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ff6b2c;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 107, 44, 0.2);
+}
+
+/* About Title */
+.about-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 28px;
+  background: linear-gradient(135deg, #1e1a17, #ff6b2c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Quote Section */
+.about-quote {
+  background: linear-gradient(135deg, #fef8f3, #fff5ed);
+  padding: 28px 32px;
+  border-radius: 28px;
+  margin: 28px 0;
+  border-left: 4px solid #ff6b2c;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.about-quote:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 25px rgba(255, 107, 44, 0.08);
+}
+
+.about-quote i {
+  color: #ff6b2c;
+  font-size: 28px;
+  opacity: 0.6;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.about-quote p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4a3a2a;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* About Text */
+.about-text {
+  color: #6a5a4a;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  font-size: 16px;
+}
+
+/* Statistics Section */
+.about-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 2px solid #f0e6df;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 38px;
+  font-weight: 800;
+  color: #ff6b2c;
+  margin-bottom: 10px;
+  display: block;
+  position: relative;
+  display: inline-block;
+}
+
+.stat-number::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b2c, #ffb347);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+}
+
+.stat:hover .stat-number::after {
+  transform: scaleX(1);
+}
+
+.stat-label {
+  display: block;
+  color: #8a7a6a;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 12px;
+}
+
+/* Gallery Section - Right Side */
+.about-gallery {
+  background: linear-gradient(135deg, #fefaf5, #f5ede5);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-main {
+  margin-bottom: 24px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+}
+
+.about-image {
+  width: 100%;
+  height: 340px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.03);
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.thumb {
+  flex: 1;
+  height: 85px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  opacity: 0.75;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.thumb:hover {
+  transform: translateY(-4px);
+  opacity: 1;
+}
+
+.thumb.active {
+  border-color: #ff6b2c;
+  opacity: 1;
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(255, 107, 44, 0.2);
+}
+
+/* Thumbnail Images */
+.thumb[data-img="burger1"] {
+  background-image: url('img/9.png');
+}
+
+.thumb[data-img="kitchen"] {
+  background-image: url('img/kitchen.jpg');
+}
+
+.thumb[data-img="team"] {
+  background-image: url('img/team.jpg');
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .about-panel {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-story {
+    order: 2;
+    padding: 40px 32px;
+  }
+  
+  .about-gallery {
+    order: 1;
+    padding: 40px 32px;
+  }
+  
+  .about-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-story {
+    padding: 32px 24px;
+  }
+  
+  .about-gallery {
+    padding: 32px 24px;
+  }
+  
+  .about-title {
+    font-size: 30px;
+  }
+  
+  .about-quote p {
+    font-size: 16px;
+  }
+  
+  .about-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .stat-number {
+    font-size: 32px;
+  }
+  
+  .gallery-thumbs {
+    gap: 12px;
+  }
+  
+  .thumb {
+    height: 65px;
+  }
+}
+
+/* RTL Support */
+body.rtl .about-quote {
+  border-left: none;
+  border-right: 4px solid #ff6b2c;
+}
+
+body.rtl .about-quote:hover {
+  transform: translateX(-6px);
+}
