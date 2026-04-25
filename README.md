@@ -7,7 +7,7 @@
 
 A modern, responsive restaurant website for Smash King Burger – a handcrafted smashed burger joint in Nürnberg, Germany.
 
-## Live Demo
+## Live
 
 > **Live URL:** [https://data-lab01.github.io/smashking-bgr/](https://data-lab01.github.io/smashking-bgr/)
 
