@@ -2035,3 +2035,45 @@ body.rtl .whatsapp-float:hover .whatsapp-tooltip {
 .menu-price {
   color: #ffb347;
 }
+/*  FEATURES SECTION - LIGHT BACKGROUND */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  padding: 64px 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.feature {
+  text-align: center;
+  padding: 32px;
+  background: #bab4b4;  /* White background */
+  border-radius: 28px;
+  border: 1px solid #f0e6df;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  border-color: #ff6b2c;
+  box-shadow: 0 12px 24px rgba(255, 107, 44, 0.1);
+}
+
+.feature i {
+  font-size: 48px;
+  color: #ff6b2c;
+  margin-bottom: 16px;
+}
+
+.feature h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #1e1a17;  /* Dark text for light background */
+}
+
+.feature p {
+  color: #6a5a4a;  /* Medium dark text for light background */
+  font-size: 14px;
+}
