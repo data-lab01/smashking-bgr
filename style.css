@@ -1,6 +1,4 @@
-/* ============================================
-   SMASH KING BURGER - FULL WIDTH VERSION
-   ============================================ */
+/* FULL  */
 
 * {
   margin: 0;
@@ -34,7 +32,7 @@ body.rtl {
   overflow-x: hidden;
 }
 
-/* ========== HEADER - FULL WIDTH ========== */
+/*  HEADER - FULL WIDTH  */
 .header {
   background: #ffffff;
   border-bottom: 1px solid #f0e6df;
@@ -200,7 +198,7 @@ body.rtl {
   transition: all 0.3s;
 }
 
-/* ========== HERO - FULL WIDTH ========== */
+/*  HERO - FULL WIDTH  */
 .hero {
   position: relative;
   min-height: 85vh;
@@ -274,7 +272,7 @@ body.rtl {
   flex-wrap: wrap;
 }
 
-/* ========== BUTTONS ========== */
+/*  BUTTONS  */
 .btn-primary {
   background: #ff6b2c;
   border: none;
@@ -313,7 +311,7 @@ body.rtl {
   width: 100%;
 }
 
-/* ========== TRUST BADGES ========== */
+/*  TRUST BADGES  */
 .trust-badges {
   display: flex;
   justify-content: center;
@@ -343,7 +341,7 @@ body.rtl {
   color: #ff6b2c;
 }
 
-/* ========== FEATURES ========== */
+/*  FEATURES  */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -387,7 +385,7 @@ body.rtl {
   font-size: 14px;
 }
 
-/* ========== PAGES & CONTAINERS ========== */
+/*  PAGES & CONTAINERS  */
 .page-container {
   max-width: 1400px;
   width: 90%;
@@ -425,7 +423,7 @@ body.rtl {
   color: #8a7a6a;
 }
 
-/* ========== MENU GRID ========== */
+/*  MENU GRID  */
 .menu-grid,
 .combos-grid,
 .locations-grid,
@@ -499,7 +497,7 @@ body.rtl {
   color: #ffffff;
 }
 
-/* ========== BUILDER PAGE ========== */
+/*  BUILDER PAGE  */
 .builder-panel,
 .deals-panel,
 .about-panel,
@@ -538,7 +536,7 @@ body.rtl {
   color: #1e1a17;
 }
 
-/* ========== ABOUT PAGE ========== */
+/*  ABOUT PAGE  */
 .about-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -656,7 +654,7 @@ body.rtl {
 .thumb[data-img="kitchen"] { background-image: url('img/kitchen.jpg'); }
 .thumb[data-img="team"] { background-image: url('img/team.jpg'); }
 
-/* ========== LOCATIONS PAGE ========== */
+/*  LOCATIONS PAGE  */
 .location-card {
   position: relative;
 }
@@ -786,7 +784,7 @@ body.rtl {
   border-color: #ff6b2c;
 }
 
-/* ========== OFFERS PAGE ========== */
+/*  OFFERS PAGE  */
 .offer-card {
   text-align: center;
   position: relative;
@@ -876,7 +874,7 @@ body.rtl {
   color: #ffffff;
 }
 
-/* ========== CONTACT PAGE ========== */
+/*  CONTACT PAGE  */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -926,7 +924,7 @@ body.rtl {
   display: block;
 }
 
-/* ========== CART SIDEBAR ========== */
+/*  CART SIDEBAR  */
 .cart-overlay {
   position: fixed;
   top: 0;
@@ -999,7 +997,7 @@ body.rtl {
   color: #ff6b2c;
 }
 
-/* ========== FOOTER - PROFESSIONAL FULL WIDTH ========== */
+/*  FOOTER - PROFESSIONAL FULL WIDTH  */
 .footer {
   background: #1e1a17;
   padding: 60px 32px 0;
@@ -1245,7 +1243,7 @@ main {
   }
 }
 
-/* ========== RESPONSIVE - FULL WIDTH ON ALL DEVICES ========== */
+/*  RESPONSIVE - FULL WIDTH ON ALL DEVICES  */
 @media (max-width: 1024px) {
   .header-container {
     width: 95%;
@@ -1502,7 +1500,7 @@ body.rtl .nav-links-wrapper.open {
   right: 0;
 }
 
-/* ========== COOKIE CONSENT BANNER ========== */
+/*  COOKIE CONSENT BANNER  */
 .cookie-consent {
   position: fixed;
   bottom: 0;
@@ -1748,7 +1746,7 @@ body.rtl .nav-links-wrapper.open {
   }
 }
 
-/* ========== FLOATING WHATSAPP BUTTON ========== */
+/*  FLOATING WHATSAPP BUTTON  */
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -1865,7 +1863,7 @@ body.rtl .whatsapp-float:hover .whatsapp-tooltip {
     left: 20px;
   }
 }
-/* ========== STORE STATUS BADGE ========== */
+/*  STORE STATUS BADGE  */
 .store-status-container {
   display: flex;
   justify-content: center;
@@ -1921,5 +1919,76 @@ body.rtl .whatsapp-float:hover .whatsapp-tooltip {
   .store-status {
     font-size: 11px;
     padding: 6px 14px;
+  }
+}
+/*  CATEGORY FILTERS  */
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.category-btn {
+  background: #f5f0eb;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #4a3a2a;
+}
+
+.category-btn:hover {
+  background: #ff6b2c;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background: #ff6b2c;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 107, 44, 0.3);
+}
+
+/* Category badge on menu cards */
+.menu-category-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 107, 44, 0.9);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.menu-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.no-items {
+  text-align: center;
+  padding: 60px;
+  color: #aaa;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .category-filters {
+    gap: 8px;
+  }
+  
+  .category-btn {
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }
