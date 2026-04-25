@@ -17,7 +17,7 @@
   <!-- Header -->
   <header class="header">
     <div class="header-container">
-      <div class="logo">SMASH KING <span>BURGER</span></div>
+      <div class="logo">SMASHKING <span>BURGER</span></div>
       
       <div class="language-selector" id="langSelector">
         <button data-lang="en" class="lang-btn active">🇬🇧 EN</button>
@@ -60,11 +60,11 @@
       <div class="hero-bg"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <!-- Store Status Badge - NEW FEATURE -->
+        <!-- Store Status Badge -->
         <div class="store-status-container" id="storeStatusContainer">
           <div class="store-status loading">Checking store hours...</div>
         </div>
-        <span class="hero-badge" data-i18n="hero_badge"> NÜRNBERG'S FAVORITE BURGER</span>
+        <span class="hero-badge" data-i18n="hero_badge">NÜRNBERG'S FAVORITE BURGER</span>
         <h1><span data-i18n="hero_line1">Smash that craving</span><br><span data-i18n="hero_line2">with every bite</span></h1>
         <p class="hero-description" data-i18n="hero_desc">Real beef. Smashed on the grill. Served hot. No frozen stuff. Just good food.</p>
         <div class="hero-buttons">
@@ -88,13 +88,23 @@
     </section>
   </main>
 
-  <!-- MENU PAGE -->
+  <!-- MENU PAGE (with category filters) -->
   <div id="menuPage" class="page">
     <div class="page-container">
       <div class="section-title">
         <h2 data-i18n="menu_title">Our menu</h2>
         <p data-i18n="menu_subtitle">What we're famous for</p>
       </div>
+      
+      <!-- Category Filter Buttons with translation support -->
+      <div class="category-filters">
+        <button class="category-btn active" data-category="all" data-i18n="filter_all">All</button>
+        <button class="category-btn" data-category="burgers" data-i18n="filter_burgers"> Burgers</button>
+        <button class="category-btn" data-category="sides" data-i18n="filter_sides"> Sides</button>
+        <button class="category-btn" data-category="drinks" data-i18n="filter_drinks"> Drinks</button>
+        <button class="category-btn" data-category="desserts" data-i18n="filter_desserts"> Desserts</button>
+      </div>
+      
       <div id="menuGrid" class="menu-grid"></div>
     </div>
   </div>
