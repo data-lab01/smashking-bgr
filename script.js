@@ -20,9 +20,11 @@ const menuItems = [
   { id: 13, name: "LIPTON", desc: "Orange soda", price: 3.50, img: "img/lipton.png", category: "drinks" },
   
   // Desserts Category (id: 13-15)
-  { id: 13, name: "MILKSHAKE", desc: "Vanilla, chocolate or strawberry", price: 5.50, img: "img/7.png", category: "desserts" },
-  { id: 14, name: "BROWNIE", desc: "Warm chocolate brownie", price: 4.50, img: "img/11.png", category: "desserts" },
-  { id: 15, name: "ICE CREAM", desc: "Vanilla soft serve", price: 3.00, img: "img/5.png", category: "desserts" }
+  { id: 13, name: "Beef Patty", desc: "Extra beef patty", price: 3.00, img: "img/patty.png", category: "desserts" },
+  { id: 14, name: "Extra Cheddar", desc: "Extra cheddar cheese", price: 1.50, img: "img/cheddar.png", category: "desserts" },
+  { id: 15, name: "Chicken Bacon", desc: "Extra chicken bacon", price: 2.50, img: "img/bacon.png", category: "desserts" },
+  { id: 16, name: "Jalapeno", desc: "Extra jalapeno peppers", price: 1.50, img: "img/jalapenos.png", category: "desserts" },
+  { id: 17, name: "Caramelized Onions", desc: "Extra caramelized onions", price: 2.00, img: "img/onions.png", category: "desserts" }
 ];
 
 //  LOCATIONS DATA 
