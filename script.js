@@ -12,7 +12,7 @@ const menuItems = [
   { id: 7, name: "CHICKEN NUGGETS", desc: "6 pieces with sauce", price: 6.00, img: "img/11.png", category: "sides" },
   { id: 8, name: "ONION RINGS", desc: "Crispy onion rings", price: 4.50, img: "img/5.png", category: "sides" },
   { id: 9, name: "SWEET POTATO FRIES", desc: "Crispy sweet potato fries", price: 6.00, img: "img/kartofel.png", category: "sides" },
-  { id: 10, name: "CHILLE CHEESE NUGGETS", desc: "Crispy cheese nuggets", price: 5.00, img: "img/6.png", category: "sides" },
+  { id: 10, name: "CHILLI CHEESE NUGGETS", desc: "Crispy cheese nuggets", price: 5.00, img: "img/6.png", category: "sides" },
   
   // Drinks Category (id: 11-16)
   { id: 11, name: "SPRITE", desc: "Refreshing lemon-lime soda", price: 3.50, img: "img/sprite.png", category: "drinks" },
