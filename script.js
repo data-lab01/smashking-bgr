@@ -18,16 +18,15 @@ const menuItems = [
   { id: 11, name: "SPRITE", desc: "Refreshing lemon-lime soda", price: 3.50, img: "img/sprite.png", category: "drinks" },
   { id: 12, name: "COCA COLA", desc: "Classic cola", price: 3.50, img: "img/cola.png", category: "drinks" },
   { id: 13, name: "FANTA", desc: "Orange soda", price: 3.50, img: "img/fanta.png", category: "drinks" },
-  { id: 14, name: "LIPTON", desc: "Orange soda", price: 3.50, img: "img/lipton.png", category: "drinks" },
-  { id: 15, name: "COCA COLA ZERO", desc: "Cola Zero", price: 3.50, img: "img/cola_zero.png", category: "drinks" },
-  { id: 16, name: "MEZZO MIX", desc: "Mezzo Mix", price: 3.50, img: "img/mezzo.png", category: "drinks" },
+  { id: 14, name: "COCA COLA ZERO", desc: "Cola Zero", price: 3.50, img: "img/cola_zero.png", category: "drinks" },
+  { id: 15, name: "MEZZO MIX", desc: "Mezzo Mix", price: 3.50, img: "img/mezzo.png", category: "drinks" },
   
   // Extras Category (id: 17-21)
-  { id: 17, name: "Beef Patty", desc: "Extra beef patty", price: 3.00, img: "img/patty.png", category: "Extras" },
-  { id: 18, name: "Extra Cheddar", desc: "Extra cheddar cheese", price: 1.50, img: "img/cheddar.png", category: "Extras" },
-  { id: 19, name: "Chicken Bacon", desc: "Extra chicken bacon", price: 2.50, img: "img/bacon.png", category: "Extras" },
-  { id: 20, name: "Jalapeno", desc: "Extra jalapeno peppers", price: 1.50, img: "img/jalapenos.png", category: "Extras" },
-  { id: 21, name: "Caramelized Onions", desc: "Extra caramelized onions", price: 2.00, img: "img/onions.png", category: "Extras" }
+  { id: 16, name: "Beef Patty", desc: "Extra beef patty", price: 3.00, img: "img/patty.png", category: "Extras" },
+  { id: 17, name: "Extra Cheddar", desc: "Extra cheddar cheese", price: 1.50, img: "img/cheddar.png", category: "Extras" },
+  { id: 18, name: "Chicken Bacon", desc: "Extra chicken bacon", price: 2.50, img: "img/bacon.png", category: "Extras" },
+  { id: 19, name: "Jalapeno", desc: "Extra jalapeno peppers", price: 1.50, img: "img/jalapenos.png", category: "Extras" },
+  { id: 20, name: "Caramelized Onions", desc: "Extra caramelized onions", price: 2.00, img: "img/onions.png", category: "Extras" }
 ];
 
 //  LOCATIONS DATA 
